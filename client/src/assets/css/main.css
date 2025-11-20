@@ -1,0 +1,272 @@
+/**
+ * ServicingHub Modern CSS
+ * Cleaned & Optimized for React + Bootstrap 5.3
+ */
+
+/* --------------------------------------------------------------
+   ROOT VARIABLES
+-------------------------------------------------------------- */
+:root {
+  --default-font: "Roboto", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #556270;
+  --accent-color: #d9232d;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+/* --------------------------------------------------------------
+   GLOBAL STYLES
+-------------------------------------------------------------- */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* --------------------------------------------------------------
+   HEADER + NAVBAR
+-------------------------------------------------------------- */
+.header {
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: 0.5s;
+  z-index: 999;
+}
+
+.header .logo img {
+  max-height: 40px;
+}
+
+.navmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navmenu li { position: relative; }
+
+.navmenu a {
+  padding: 12px 18px;
+  font-family: var(--nav-font);
+  font-size: 15px;
+  color: var(--nav-color);
+  transition: 0.3s;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+  color: var(--nav-hover-color);
+}
+
+/* MOBILE NAV FIX */
+.mobile-nav-active .navmenu > ul {
+  display: block;
+}
+
+/* --------------------------------------------------------------
+   HERO (FULL WIDTH)
+-------------------------------------------------------------- */
+.hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* --------------------------------------------------------------
+   ABOUT SECTION
+-------------------------------------------------------------- */
+.about ul {
+  list-style: none;
+  padding: 0;
+}
+.about ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.about ul i {
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+
+/* --------------------------------------------------------------
+   SERVICES
+-------------------------------------------------------------- */
+.services .service-item {
+  background: var(--surface-color);
+  border: 1px solid #e5e5e5;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+.services .service-item:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+.services img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+/* --------------------------------------------------------------
+   PROJECT SLIDER – SINGLE ROW (AUTO-ROTATE)
+-------------------------------------------------------------- */
+.project-row-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.project-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+.project-row::-webkit-scrollbar {
+  display: none;
+}
+
+.project-item {
+  background: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding-bottom: 10px;
+  transition: 0.3s;
+}
+.project-item:hover {
+  transform: translateY(-5px);
+}
+.project-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.project-item h5 {
+  margin: 10px;
+  font-size: 15px;
+  color: var(--heading-color);
+}
+
+/* --------------------------------------------------------------
+   CONTACT SECTION
+-------------------------------------------------------------- */
+.contact .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.contact .info-item i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+.contact button {
+  background: var(--accent-color);
+  color: #fff;
+  border: 0;
+  padding: 10px 25px;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------
+   FOOTER
+-------------------------------------------------------------- */
+.footer {
+  background: #f8f9fa;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.footer h4 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+.footer-links ul li a:hover {
+  color: var(--accent-color);
+}
+
+.footer .social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer .copyright {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* --------------------------------------------------------------
+   RESPONSIVE FIXES
+-------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .navmenu ul {
+    display: none;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) {
+  .project-item img {
+    height: 140px;
+  }
+}
