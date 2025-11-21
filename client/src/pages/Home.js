@@ -195,17 +195,54 @@ const Home = () => {
       </section>
 
       {/* ABOUT US */}
-      <section className="section light-background mb-5">
-        <div className="container text-center">
-          <div className="section-title">
-            <h2>About Us</h2>
-            <p>Who We Are</p>
-          </div>
-          <p className="mb-3">
-            ServicingHub offers end-to-end technology & electronics solutions across India.
-          </p>
-        </div>
-      </section>
+<section className="section mb-5">
+  <div className="container">
+    
+    {/* ABOUT TITLE */}
+    <div className="section-title text-center mb-4">
+      <h2>About Us</h2>
+      <p>Who We Are</p>
+    </div>
+
+    <p className="text-center mb-5">
+      ServicingHub delivers end-to-end technology and electronics solutions across India,
+      covering IT infrastructure, cloud services, DevOps, software development,
+      and electronics repair through K Electronics.
+    </p>
+
+    {/* ABOUT CONTENT */}
+    <div className="row gy-4 align-items-center">
+
+      {/* LEFT TEXT */}
+      <div className="col-lg-6">
+        <h3 className="mb-3">Our Mission</h3>
+        <p>
+          We aim to simplify technology and maintenance services for homes,
+          businesses, and enterprises by offering trusted and affordable solutions.
+        </p>
+
+        <ul className="list-unstyled">
+          <li className="mb-2">✓ Software Development & Modern Websites</li>
+          <li className="mb-2">✓ Cloud Architecture & Infrastructure</li>
+          <li className="mb-2">✓ DevOps Automation & CI/CD Pipelines</li>
+          <li className="mb-2">✓ Electronics Repair & Maintenance Services</li>
+        </ul>
+      </div>
+
+      {/* RIGHT IMAGE */}
+      <div className="col-lg-6 text-center">
+        <img
+          src="https://picsum.photos/800/500?random=30"
+          alt="About ServicingHub"
+          className="img-fluid rounded shadow-sm"
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
       {/* Full services */}
       <Services />
