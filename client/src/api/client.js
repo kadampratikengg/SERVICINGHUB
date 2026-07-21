@@ -1,40 +1,49 @@
 // client/src/api/client.js
+const API_BASE =
+  process.env.REACT_APP_API_BASE || "http://localhost:5000/api";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "";
-
-const getHeaders = () => {
+const getAuthHeader = () => {
   const token = localStorage.getItem("token");
-  return {
-    "Content-Type": "application/json",
-    ...(token ? { Authorization: `Bearer ${token}` } : {})
-  };
+  return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
 const apiClient = {
   get: (path) =>
     fetch(API_BASE + path, {
       method: "GET",
-      headers: getHeaders(),
+      headers: { ...getAuthHeader() },
     }),
 
-  post: (path, body) =>
-    fetch(API_BASE + path, {
+  post: (path, body) => {
+    const isFormData = body instanceof FormData;
+
+    return fetch(API_BASE + path, {
       method: "POST",
-      headers: getHeaders(),
-      body: JSON.stringify(body),
-    }),
+      headers: {
+        ...getAuthHeader(),
+        ...(!isFormData && { "Content-Type": "application/json" }),
+      },
+      body: isFormData ? body : JSON.stringify(body),
+    });
+  },
 
-  put: (path, body) =>
-    fetch(API_BASE + path, {
+  put: (path, body) => {
+    const isFormData = body instanceof FormData;
+
+    return fetch(API_BASE + path, {
       method: "PUT",
-      headers: getHeaders(),
-      body: JSON.stringify(body),
-    }),
+      headers: {
+        ...getAuthHeader(),
+        ...(!isFormData && { "Content-Type": "application/json" }),
+      },
+      body: isFormData ? body : JSON.stringify(body),
+    });
+  },
 
   del: (path) =>
     fetch(API_BASE + path, {
       method: "DELETE",
-      headers: getHeaders(),
+      headers: { ...getAuthHeader() },
     }),
 };
 

@@ -32,6 +32,16 @@ const Pricing = () => {
         "Uptime SLA 99.9%",
       ],
     },
+    {
+      name: "Custom Plan",
+      price: "Contact Us",
+      features: [
+        "Fully Customized Services",
+        "Flexible Infrastructure",
+        "On-Demand DevOps Support",
+        "Pay Only for What You Use",
+      ],
+    },
   ];
 
   return (
@@ -44,7 +54,7 @@ const Pricing = () => {
 
         <div className="row gy-4 justify-content-center">
           {plans.map((plan, i) => (
-            <div className="col-lg-4 col-md-6" key={i}>
+            <div className="col-lg-3 col-md-6" key={i}>
               <div className="pricing-item text-center">
                 <h3>{plan.name}</h3>
                 <h4>{plan.price}</h4>

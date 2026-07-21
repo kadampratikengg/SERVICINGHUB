@@ -1,21 +1,38 @@
+// client/src/pages/Login.js
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import api from "../api/client";
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
-  const { login } = useAuth();
+  const { setUser } = useAuth();   // Make sure AuthContext supports this
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
   const navigate = useNavigate();
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    if (login(email, password)) {
-      navigate("/blog");
-    } else {
+
+    // Call backend
+    const res = await api.post("/auth/login", { email, password });
+
+    if (!res.ok) {
       setErr("Invalid credentials");
+      return;
     }
+
+    const data = await res.json();
+
+    // Save JWT token
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+    }
+
+    // Save user info
+    setUser({ email });
+
+    navigate("/blog");
   };
 
   return (
@@ -53,7 +70,6 @@ const Login = () => {
           <button className="btn btn-primary w-100">Login</button>
         </form>
 
-        {/* Extra Account Links */}
         <div className="text-center mt-3">
           <Link to="/register" className="text-decoration-none me-3">
             Create Account
@@ -62,10 +78,6 @@ const Login = () => {
             Forgot Password?
           </Link>
         </div>
-
-        <p className="mt-3 text-muted text-center">
-          Demo login — replace with Node backend authentication.
-        </p>
       </div>
     </section>
   );

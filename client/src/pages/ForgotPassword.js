@@ -1,5 +1,7 @@
 // client/src/pages/ForgotPassword.js
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -23,9 +25,16 @@ const ForgotPassword = () => {
 
             <button className="btn btn-primary w-100">Send Reset Link</button>
           </form>
+          
         ) : (
           <div className="alert alert-success">If email exists, reset link has been sent!</div>
         )}
+        
+        <div className="mt-3 text-center">
+          <Link to="/login">Already have an account?</Link>
+        </div>
+
+
       </div>
     </section>
   );
