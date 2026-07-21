@@ -1,157 +1,139 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  // ✅ useState must be inside the component
   const [logoVisible, setLogoVisible] = useState(true);
-
-  // ✅ logo path
-  const logoPath = "/assets/img/logo.png";
+  const logoPath = '/assets/img/logo.png';
 
   return (
-    <footer id="footer" className="footer">
-      <div className="footer-top">
-        <div className="container">
-          <div className="row gy-4">
-            
-            {/* =========================
-                ABOUT SECTION WITH LOGO
-            ============================ */}
-            <div className="col-lg-4 col-md-6 footer-about">
-              <Link to="/" className="logo d-flex align-items-center mb-3">
+    <footer id='footer' className='footer'>
+      <div className='container'>
+        <div className='footer-surface'>
+          <div className='row gy-4'>
+            <div className='col-lg-4 col-md-6'>
+              <Link to='/' className='logo d-inline-flex align-items-center gap-3 mb-3'>
                 {logoVisible ? (
                   <img
                     src={logoPath}
-                    alt="ServicingHub Logo"
-                    onError={() => setLogoVisible(false)} // hide if missing
-                    style={{ maxHeight: "40px" }}
+                    alt='ServiceHub Technologies Logo'
+                    onError={() => setLogoVisible(false)}
+                    className='logo-image'
                   />
                 ) : (
-                  <h1 className="m-0">ServicingHub</h1>
+                  <span className='logo-fallback'>
+                    <span className='logo-badge'>SH</span>
+                    <span>
+                      <span className='logo-title d-block'>ServiceHub</span>
+                      <small className='logo-subtitle'>Technology Services</small>
+                    </span>
+                  </span>
                 )}
               </Link>
 
-              <p>
-                ServicingHub provides full-stack technology solutions and
-                electronics services — from cloud infrastructure to on-site
-                appliance repair.
+              <p className='footer-copy mb-3'>
+                ServiceHub Technologies designs and supports modern digital systems,
+                cloud infrastructure, software products, and electronics services with
+                a practical, delivery-focused approach.
               </p>
 
-             {/* Social Media Links */}
-<div className="social-links mt-3">
-  <a
-    href="https://twitter.com/servicinghub"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i className="bi bi-twitter-x"></i>   {/* X logo */}
-  </a>
-
-  <a
-    href="https://facebook.com/servicinghub"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i className="bi bi-facebook"></i>
-  </a>
-
-  <a
-    href="https://instagram.com/servicinghub"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i className="bi bi-instagram"></i>
-  </a>
-
-  <a
-    href="https://linkedin.com/company/servicinghub"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i className="bi bi-linkedin"></i>
-  </a>
-</div>
-
+              <div className='social-links mt-4'>
+                <a
+                  href='https://twitter.com/servicehubtech'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Twitter'
+                >
+                  <i className='bi bi-twitter-x'></i>
+                </a>
+                <a
+                  href='https://facebook.com/servicehubtech'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Facebook'
+                >
+                  <i className='bi bi-facebook'></i>
+                </a>
+                <a
+                  href='https://instagram.com/servicehubtech'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Instagram'
+                >
+                  <i className='bi bi-instagram'></i>
+                </a>
+                <a
+                  href='https://linkedin.com/company/servicehubtech'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='LinkedIn'
+                >
+                  <i className='bi bi-linkedin'></i>
+                </a>
+              </div>
             </div>
 
-            {/* =========================
-                QUICK LINKS
-            ============================ */}
-           <div className="col-lg-2 col-md-3 footer-links">
-  <h4>Quick Links</h4>
-  <ul>
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/about">About</Link>
-    </li>
-    <li>
-      <Link to="/services">Services</Link>
-    </li>
-    <li>
-      <Link to="/Pricing">Pricing</Link>
-    </li>
-    <li>
-      <Link to="/Blog">Blog</Link>
-    </li>
-    <li>
-      <Link to="/contact">Contact</Link>
-    </li>
-  </ul>
-</div>
+            <div className='col-lg-2 col-md-3'>
+              <h4>Quick Links</h4>
+              <ul className='footer-links-list'>
+                <li>
+                  <Link to='/'>Home</Link>
+                </li>
+                <li>
+                  <Link to='/about'>About</Link>
+                </li>
+                <li>
+                  <Link to='/services'>Services</Link>
+                </li>
+                <li>
+                  <Link to='/pricing'>Pricing</Link>
+                </li>
+                <li>
+                  <Link to='/blog'>Blog</Link>
+                </li>
+                <li>
+                  <Link to='/contact'>Contact</Link>
+                </li>
+              </ul>
+            </div>
 
+            <div className='col-lg-3 col-md-3'>
+              <h4>Technology Services</h4>
+              <ul className='footer-links-list'>
+                <li>
+                  <Link to='/services'>Software Development</Link>
+                </li>
+                <li>
+                  <Link to='/services'>DevOps Automation</Link>
+                </li>
+                <li>
+                  <Link to='/services'>Cloud Architecture</Link>
+                </li>
+                <li>
+                  <Link to='/services'>Hosting & Maintenance</Link>
+                </li>
+              </ul>
+            </div>
 
-            {/* =========================
-                TECHNOLOGY LINKS
-            ============================ */}
-           <div className="col-lg-3 col-md-3 footer-links">
-  <h4>Technology Services</h4>
-  <ul>
-    <li>
-      <Link to="/services">Software Development</Link>
-    </li>
-    <li>
-      <Link to="/services">DevOps Solutions</Link>
-    </li>
-    <li>
-      <Link to="/services">Cloud Setup (AWS, GCP, Azure)</Link>
-    </li>
-    <li>
-      <Link to="/services">Hosting & Maintenance</Link>
-    </li>
-  </ul>
-</div>
-
-            {/* =========================
-                CONTACT INFO
-            ============================ */}
-            <div className="col-lg-3 col-md-4 footer-contact">
-              <h4>Contact Us</h4>
-              <p>
-                ServicingHub Technologies<br />
-                Satara, Maharashtra 415011<br />
-                India<br />
-                <br />
-                <strong>Phone:</strong> +91 9876543210<br />
-                <strong>Email:</strong> info@servicinghub.in<br />
-              </p>
+            <div className='col-lg-3 col-md-4'>
+              <h4>Contact</h4>
+              <div className='footer-contact-card'>
+                <p className='mb-2'>Satara, Maharashtra 415011, India</p>
+                <p className='mb-2'>
+                  <strong>Phone:</strong> +91 9876543210
+                </p>
+                <p className='mb-0'>
+                  <strong>Email:</strong> info@ServiceHub.in
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* =========================
-          COPYRIGHT SECTION 
-      ============================ */}
-      <br>
-      </br>
-      <div className="copyright text-center">
-        <div className="container">
-          <p className="mb-0">
-            © {new Date().getFullYear()} ServicingHub. All Rights Reserved.
-          </p>
-          <p className="credits">Designed by ServicingHub Technologies</p>
+          <div className='copyright text-center'>
+            <p className='mb-1'>
+              &copy; {new Date().getFullYear()} ServiceHub Technologies. All rights reserved.
+            </p>
+            <small>Designed for a clean, modern, technology-first experience.</small>
+          </div>
         </div>
       </div>
     </footer>
