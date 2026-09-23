@@ -723,6 +723,18 @@ textarea.form-control:focus {
   border: 1px solid var(--border-color);
 }
 
+/* ── Desktop full-width override ──────────────────────────────── */
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
 @media (max-width: 991.98px) {
   .app-shell {
     padding-top: 88px;

@@ -14,8 +14,8 @@ const About = () => {
             <div className='col-lg-6'>
               <div className='surface-panel p-3 p-lg-4'>
                 <img
-                  src='https://picsum.photos/800/500?random=30'
-                  alt='About ServiceHub'
+                  src='https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop&auto=format'
+                  alt='About ServiceHub — Technology Team'
                   className='img-fluid rounded'
                 />
               </div>

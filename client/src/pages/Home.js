@@ -3,43 +3,53 @@ import Services from './Services';
 
 const projectsList = [
   {
-    img: 'https://picsum.photos/600/400?random=101',
+    // AWS cloud — data center server racks
+    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&auto=format',
     name: 'AWS Cloud Migration',
   },
   {
-    img: 'https://picsum.photos/600/400?random=102',
+    // DevOps CI/CD — code on dual monitors
+    img: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop&auto=format',
     name: 'DevOps CI/CD Setup',
   },
   {
-    img: 'https://picsum.photos/600/400?random=103',
+    // Web development — coding on laptop
+    img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop&auto=format',
     name: 'React Corporate Website',
   },
   {
-    img: 'https://picsum.photos/600/400?random=104',
+    // Kubernetes / containers — abstract network nodes
+    img: 'https://images.unsplash.com/photo-1640552435388-a54879e72b28?w=600&h=400&fit=crop&auto=format',
     name: 'Kubernetes Deployment',
   },
   {
-    img: 'https://picsum.photos/600/400?random=105',
+    // E-commerce — online shopping / payment
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format',
     name: 'E-commerce Platform',
   },
   {
-    img: 'https://picsum.photos/600/400?random=106',
+    // CCTV — security camera on building
+    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop&auto=format',
     name: 'CCTV Office Installation',
   },
   {
-    img: 'https://picsum.photos/600/400?random=107',
+    // Laptop IT setup — open laptop with tools
+    img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&h=400&fit=crop&auto=format',
     name: 'Laptop & IT Infra Setup',
   },
   {
-    img: 'https://picsum.photos/600/400?random=108',
+    // Cybersecurity / firewall — padlock on circuit board
+    img: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop&auto=format',
     name: 'Cloudflare Security Setup',
   },
   {
-    img: 'https://picsum.photos/600/400?random=109',
+    // CRM / email — business dashboard on screen
+    img: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=600&h=400&fit=crop&auto=format',
     name: 'Zoho Mail + CRM Setup',
   },
   {
-    img: 'https://picsum.photos/600/400?random=110',
+    // Azure / cloud identity — glowing cloud network
+    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&auto=format',
     name: 'Azure Active Directory Setup',
   },
 ];
@@ -94,11 +104,12 @@ const Home = () => {
           data-bs-ride='carousel'
         >
           <div className='carousel-inner'>
+            {/* Slide 1 — glowing circuit board / server room */}
             <div
               className='carousel-item active'
               style={{
                 backgroundImage:
-                  "url('https://picsum.photos/1920/1080?random=1')",
+                  "url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop&auto=format')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100vw',
@@ -119,7 +130,7 @@ const Home = () => {
               className='carousel-item'
               style={{
                 backgroundImage:
-                  "url('https://picsum.photos/1920/1080?random=2')",
+                  "url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop&auto=format')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100vw',
@@ -138,7 +149,7 @@ const Home = () => {
               className='carousel-item'
               style={{
                 backgroundImage:
-                  "url('https://picsum.photos/1920/1080?random=3')",
+                  "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop&auto=format')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100vw',
