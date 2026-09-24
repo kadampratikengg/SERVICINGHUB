@@ -480,11 +480,13 @@ textarea.form-control:focus {
   display: none;
 }
 
+/* Project cards — screenshot fills full card, overlay on hover */
 .project-item {
   border-radius: var(--radius-lg);
   overflow: hidden;
   min-width: 240px;
   background: var(--surface-color);
+  position: relative;           /* overlay anchors to card */
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -492,25 +494,48 @@ textarea.form-control:focus {
 
 .project-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 54px rgba(var(--shadow-color), 0.18);
+  box-shadow: 0 24px 54px rgba(var(--shadow-color), 0.22);
 }
 
-.project-item h5 {
-  margin: 0;
-  color: var(--heading-color);
-  font-size: 1rem;
+/* Always-visible bottom name bar */
+.project-name-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: linear-gradient(to top, rgba(2,6,23,0.82) 0%, transparent 100%);
 }
 
-/* Screenshot hover overlay */
-.project-thumb-wrap {
-  position: relative;
-  overflow: hidden;
+.project-tag-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--accent-color);
+  background: rgba(37,99,235,0.22);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  width: fit-content;
 }
 
+.project-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* Full-card hover overlay with Preview button — no separate section */
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(2, 6, 23, 0.52);
+  z-index: 3;
+  background: rgba(2, 6, 23, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -518,16 +543,16 @@ textarea.form-control:focus {
   transition: opacity 0.25s ease;
 }
 
-.project-thumb-wrap:hover .project-overlay {
+.project-item:hover .project-overlay {
   opacity: 1;
 }
 
 .project-overlay .btn {
-  transform: translateY(6px);
-  transition: transform 0.25s ease;
+  transform: translateY(8px);
+  transition: transform 0.28s ease;
 }
 
-.project-thumb-wrap:hover .project-overlay .btn {
+.project-item:hover .project-overlay .btn {
   transform: translateY(0);
 }
 
@@ -537,7 +562,7 @@ textarea.form-control:focus {
   100% { background-position: 600px 0; }
 }
 
-.project-thumb-wrap::before {
+.project-item::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -550,11 +575,10 @@ textarea.form-control:focus {
   background-size: 600px 100%;
   animation: shimmer 1.4s infinite linear;
   z-index: 0;
-  border-radius: 0;
 }
 
-.project-thumb-wrap img,
-.project-thumb-wrap > div {
+.project-item img,
+.project-item > div {
   position: relative;
   z-index: 1;
 }

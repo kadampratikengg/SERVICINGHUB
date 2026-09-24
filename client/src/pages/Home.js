@@ -203,62 +203,50 @@ const Home = () => {
                 };
 
                 return (
-                  <div key={idx} className='project-item' style={style}>
-                    {/* Website screenshot thumbnail */}
-                    <div className='project-thumb-wrap' style={{ position: 'relative', overflow: 'hidden' }}>
-                      <img
-                        src={thumbUrl(project.url)}
-                        alt={`${project.name} preview`}
-                        className='project-screenshot'
-                        loading='lazy'
-                        onLoad={(e) => { e.target.style.opacity = 1; }}
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
-                        }}
-                        style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block', opacity: 0, transition: 'opacity 0.4s ease' }}
-                      />
-                      {/* Fallback shown if screenshot fails */}
-                      <div style={{
-                        display: 'none', width: '100%', height: '180px',
-                        alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
-                        gap: '0.5rem', background: 'var(--surface-strong)',
-                        color: 'var(--accent-color)',
-                      }}>
-                        <i className='bi bi-globe2' style={{ fontSize: '2rem' }}></i>
-                        <small style={{ color: 'var(--default-color)', fontSize: '0.75rem' }}>{project.name}</small>
-                      </div>
-                      {/* Hover overlay with Preview button */}
-                      <div className='project-overlay'>
-                        <a
-                          href={project.url}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='btn btn-primary btn-sm'
-                        >
-                          <i className='bi bi-box-arrow-up-right me-1'></i>
-                          Preview
-                        </a>
-                      </div>
+                  <div key={idx} className='project-item project-thumb-wrap' style={style}>
+                    {/* Screenshot fills the full card */}
+                    <img
+                      src={thumbUrl(project.url)}
+                      alt={`${project.name} preview`}
+                      loading='lazy'
+                      onLoad={(e) => { e.target.style.opacity = 1; }}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                      style={{
+                        width: '100%', height: '220px',
+                        objectFit: 'cover', display: 'block',
+                        opacity: 0, transition: 'opacity 0.4s ease',
+                      }}
+                    />
+                    {/* Fallback if screenshot fails */}
+                    <div style={{
+                      display: 'none', width: '100%', height: '220px',
+                      alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
+                      gap: '0.5rem', background: 'var(--surface-strong)', color: 'var(--accent-color)',
+                    }}>
+                      <i className='bi bi-globe2' style={{ fontSize: '2.5rem' }}></i>
+                      <small style={{ color: 'var(--default-color)', fontSize: '0.8rem' }}>{project.name}</small>
                     </div>
 
-                    {/* Card footer */}
-                    <div style={{ padding: '0.75rem 1rem' }}>
-                      <span style={{
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        color: 'var(--accent-color)',
-                        background: 'var(--accent-soft)',
-                        borderRadius: '999px',
-                        padding: '0.2rem 0.65rem',
-                      }}>
-                        {project.tag}
-                      </span>
-                      <h5 style={{ margin: '0.5rem 0 0', fontSize: '0.95rem' }}>
-                        {project.name}
-                      </h5>
+                    {/* Always-visible bottom name bar */}
+                    <div className='project-name-bar'>
+                      <span className='project-tag-badge'>{project.tag}</span>
+                      <span className='project-title'>{project.name}</span>
+                    </div>
+
+                    {/* Hover overlay — Preview button only, no separate section */}
+                    <div className='project-overlay'>
+                      <a
+                        href={project.url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='btn btn-primary btn-sm px-4'
+                      >
+                        <i className='bi bi-box-arrow-up-right me-2'></i>
+                        Preview
+                      </a>
                     </div>
                   </div>
                 );
