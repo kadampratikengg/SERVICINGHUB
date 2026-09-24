@@ -508,7 +508,7 @@ textarea.form-control:focus {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  background: linear-gradient(to top, rgba(2,6,23,0.82) 0%, transparent 100%);
+  background: transparent;
 }
 
 .project-tag-badge {
