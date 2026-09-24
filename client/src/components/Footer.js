@@ -15,15 +15,15 @@ const Footer = () => {
                 {logoVisible ? (
                   <img
                     src={logoPath}
-                    alt='ServiceHub Technologies Logo'
+                    alt='IT Servicing Hub Logo'
                     onError={() => setLogoVisible(false)}
                     className='logo-image'
                   />
                 ) : (
                   <span className='logo-fallback'>
-                    <span className='logo-badge'>SH</span>
+                    <span className='logo-badge'>ITH</span>
                     <span>
-                      <span className='logo-title d-block'>ServiceHub</span>
+                      <span className='logo-title d-block'>IT Servicing Hub</span>
                       <small className='logo-subtitle'>Technology Services</small>
                     </span>
                   </span>
@@ -31,14 +31,14 @@ const Footer = () => {
               </Link>
 
               <p className='footer-copy mb-3'>
-                ServiceHub Technologies designs and supports modern digital systems,
+                IT Servicing Hub designs and supports modern digital systems,
                 cloud infrastructure, software products, and electronics services with
                 a practical, delivery-focused approach.
               </p>
 
               <div className='social-links mt-4'>
                 <a
-                  href='https://twitter.com/servicehubtech'
+                  href='https://twitter.com/itservicinghub'
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label='Twitter'
@@ -46,7 +46,7 @@ const Footer = () => {
                   <i className='bi bi-twitter-x'></i>
                 </a>
                 <a
-                  href='https://facebook.com/servicehubtech'
+                  href='https://facebook.com/itservicinghub'
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label='Facebook'
@@ -54,7 +54,7 @@ const Footer = () => {
                   <i className='bi bi-facebook'></i>
                 </a>
                 <a
-                  href='https://instagram.com/servicehubtech'
+                  href='https://instagram.com/itservicinghub'
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label='Instagram'
@@ -62,7 +62,7 @@ const Footer = () => {
                   <i className='bi bi-instagram'></i>
                 </a>
                 <a
-                  href='https://linkedin.com/company/servicehubtech'
+                  href='https://linkedin.com/company/itservicinghub'
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label='LinkedIn'
@@ -109,7 +109,7 @@ const Footer = () => {
                   <Link to='/services'>Cloud Architecture</Link>
                 </li>
                 <li>
-                  <Link to='/services'>Hosting & Maintenance</Link>
+                  <Link to='/services'>Hosting &amp; Maintenance</Link>
                 </li>
               </ul>
             </div>
@@ -122,7 +122,7 @@ const Footer = () => {
                   <strong>Phone:</strong> +91 9876543210
                 </p>
                 <p className='mb-0'>
-                  <strong>Email:</strong> info@ServiceHub.in
+                  <strong>Email:</strong> info@itservicinghub.in
                 </p>
               </div>
             </div>
@@ -130,7 +130,7 @@ const Footer = () => {
 
           <div className='copyright text-center'>
             <p className='mb-1'>
-              &copy; {new Date().getFullYear()} ServiceHub Technologies. All rights reserved.
+              &copy; {new Date().getFullYear()} IT Servicing Hub. All rights reserved.
             </p>
             <small>Designed for a clean, modern, technology-first experience.</small>
           </div>

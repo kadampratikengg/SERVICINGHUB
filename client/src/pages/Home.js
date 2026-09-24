@@ -118,7 +118,7 @@ const Home = () => {
             >
               <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100'>
                 <h2 className='text-white fw-bold mb-3'>
-                  Welcome to ServiceHub Technologies
+                  Welcome to IT Servicing Hub
                 </h2>
                 <p className='text-white'>
                   IT, Cloud & Electronics Expert Services

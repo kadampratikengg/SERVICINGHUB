@@ -6,7 +6,7 @@ const About = () => {
       <section className='section'>
         <div className='container'>
           <div className='section-title text-center'>
-            <h2>About ServiceHub</h2>
+            <h2>About IT Servicing Hub</h2>
             <p>Technology-first delivery for software, cloud, and electronics services.</p>
           </div>
 
@@ -15,7 +15,7 @@ const About = () => {
               <div className='surface-panel p-3 p-lg-4'>
                 <img
                   src='https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop&auto=format'
-                  alt='About ServiceHub — Technology Team'
+                  alt='About IT Servicing Hub — Technology Team'
                   className='img-fluid rounded'
                 />
               </div>

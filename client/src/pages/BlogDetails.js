@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-const POSTS_KEY = 'ServiceHub_posts_v1';
+const POSTS_KEY = 'ITServicingHub_posts_v1';
 
 const BlogDetails = () => {
   const { id } = useParams();

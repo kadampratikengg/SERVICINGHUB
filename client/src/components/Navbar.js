@@ -16,15 +16,15 @@ const Navbar = ({ theme, onToggleTheme }) => {
           {logoVisible ? (
             <img
               src={logoPath}
-              alt='ServiceHub Technologies Logo'
+              alt='IT Servicing Hub Logo'
               onError={() => setLogoVisible(false)}
               className='logo-image'
             />
           ) : (
             <span className='logo-fallback'>
-              <span className='logo-badge'>SH</span>
+              <span className='logo-badge'>ITH</span>
               <span>
-                <span className='logo-title d-block'>ServiceHub</span>
+                <span className='logo-title d-block'>IT Servicing Hub</span>
                 <small className='logo-subtitle'>Technology Services</small>
               </span>
             </span>
