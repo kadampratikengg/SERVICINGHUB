@@ -3,56 +3,52 @@ import Services from './Services';
 
 const projectsList = [
   {
-    // AWS cloud — data center server racks
-    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&auto=format',
-    name: 'AWS Cloud Migration',
+    name: 'Private Voting Platform',
+    url: 'https://privatevoting.in/',
+    tag: 'Web App',
   },
   {
-    // DevOps CI/CD — code on dual monitors
-    img: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop&auto=format',
-    name: 'DevOps CI/CD Setup',
+    name: 'Satvik Nutrition',
+    url: 'https://satviknutrition.com/',
+    tag: 'E-Commerce',
   },
   {
-    // Web development — coding on laptop
-    img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop&auto=format',
-    name: 'React Corporate Website',
+    name: 'Infinity Swim Academy',
+    url: 'https://www.infinityswimacademy.in/',
+    tag: 'Sports Academy',
   },
   {
-    // Kubernetes / containers — abstract network nodes
-    img: 'https://images.unsplash.com/photo-1640552435388-a54879e72b28?w=600&h=400&fit=crop&auto=format',
-    name: 'Kubernetes Deployment',
+    name: 'Blood Connect',
+    url: 'https://bloodconnect-virid.vercel.app/',
+    tag: 'Social Impact',
   },
   {
-    // E-commerce — online shopping / payment
-    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format',
-    name: 'E-commerce Platform',
+    name: 'Uniform Store',
+    url: 'https://uniform-rouge.vercel.app/',
+    tag: 'E-Commerce',
   },
   {
-    // CCTV — security camera on building
-    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop&auto=format',
-    name: 'CCTV Office Installation',
+    name: 'Global Space',
+    url: 'https://global-space-nine.vercel.app/',
+    tag: 'Web App',
   },
   {
-    // Laptop IT setup — open laptop with tools
-    img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&h=400&fit=crop&auto=format',
-    name: 'Laptop & IT Infra Setup',
+    name: 'Kabeer Travelzhub',
+    url: 'https://kabeerrtravelzhub.vercel.app/',
+    tag: 'Travel',
   },
   {
-    // Cybersecurity / firewall — padlock on circuit board
-    img: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop&auto=format',
-    name: 'Cloudflare Security Setup',
-  },
-  {
-    // CRM / email — business dashboard on screen
-    img: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=600&h=400&fit=crop&auto=format',
-    name: 'Zoho Mail + CRM Setup',
-  },
-  {
-    // Azure / cloud identity — glowing cloud network
-    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&auto=format',
-    name: 'Azure Active Directory Setup',
+    name: 'Phoenix Sports Academy',
+    url: 'https://www.phoenixsportsacademy.in/',
+    tag: 'Sports Academy',
   },
 ];
+
+// Generate a live screenshot via thum.io (free, no API key)
+const thumbUrl = (url) =>
+  `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
+
+
 
 const Home = () => {
   const rowRef = useRef(null);
@@ -187,7 +183,10 @@ const Home = () => {
 
       <section className='section text-center mb-5 p-0'>
         <div className='container'>
-          <h2 className='mb-4'>Our Recent Projects</h2>
+          <div className='section-title text-center'>
+            <h2>Our Recent Projects</h2>
+            <p>Live websites we have designed and developed for our clients</p>
+          </div>
 
           <div className='project-row-wrapper'>
             <div
@@ -204,8 +203,46 @@ const Home = () => {
 
                 return (
                   <div key={idx} className='project-item' style={style}>
-                    <img src={project.img} alt={project.name} />
-                    <h5>{project.name}</h5>
+                    {/* Website screenshot thumbnail */}
+                    <div className='project-thumb-wrap' style={{ position: 'relative', overflow: 'hidden' }}>
+                      <img
+                        src={thumbUrl(project.url)}
+                        alt={`${project.name} preview`}
+                        style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }}
+                        loading='lazy'
+                      />
+                      {/* Hover overlay with Preview button */}
+                      <div className='project-overlay'>
+                        <a
+                          href={project.url}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='btn btn-primary btn-sm'
+                        >
+                          <i className='bi bi-box-arrow-up-right me-1'></i>
+                          Preview
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Card footer */}
+                    <div style={{ padding: '0.75rem 1rem' }}>
+                      <span style={{
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                        color: 'var(--accent-color)',
+                        background: 'var(--accent-soft)',
+                        borderRadius: '999px',
+                        padding: '0.2rem 0.65rem',
+                      }}>
+                        {project.tag}
+                      </span>
+                      <h5 style={{ margin: '0.5rem 0 0', fontSize: '0.95rem' }}>
+                        {project.name}
+                      </h5>
+                    </div>
                   </div>
                 );
               })}

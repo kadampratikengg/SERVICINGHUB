@@ -495,17 +495,40 @@ textarea.form-control:focus {
   box-shadow: 0 24px 54px rgba(var(--shadow-color), 0.18);
 }
 
-.project-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
 .project-item h5 {
   margin: 0;
-  padding: 0.75rem;
   color: var(--heading-color);
   font-size: 1rem;
+}
+
+/* Screenshot hover overlay */
+.project-thumb-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-thumb-wrap:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay .btn {
+  transform: translateY(6px);
+  transition: transform 0.25s ease;
+}
+
+.project-thumb-wrap:hover .project-overlay .btn {
+  transform: translateY(0);
 }
 
 .service-item,
