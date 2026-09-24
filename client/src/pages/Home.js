@@ -44,17 +44,11 @@ const projectsList = [
   },
 ];
 
-// WordPress mShots — 100% free, no API key, no signup required
-// First load may take a few seconds to render; subsequent loads use cache.
-const thumbUrl = (url) =>
-  `https://s0.wp.com/mshots/v1/${encodeURIComponent(url)}?w=600&h=400`;
-
-
 
 const Home = () => {
   const rowRef = useRef(null);
   const [visibleCount, setVisibleCount] = useState(4);
-  const [index, setIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const calc = () => {
@@ -70,27 +64,37 @@ const Home = () => {
     return () => window.removeEventListener('resize', calc);
   }, []);
 
+  // Smooth auto-scroll carousel loop (pauses when user hovers)
   useEffect(() => {
-    const total = projectsList.length;
-    const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % total);
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      const row = rowRef.current;
+      if (!row) return;
 
-  useEffect(() => {
+      const maxScrollLeft = row.scrollWidth - row.clientWidth;
+      if (row.scrollLeft >= maxScrollLeft - 15) {
+        row.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        const cardWidth = row.firstElementChild
+          ? row.firstElementChild.clientWidth + 16
+          : 300;
+        row.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  const handleScroll = (direction) => {
     const row = rowRef.current;
     if (!row) return;
 
-    const itemWidth = row.clientWidth / visibleCount;
-    const maxStart = Math.max(0, projectsList.length - visibleCount);
-    const startIndex = Math.min(index, maxStart);
-
-    row.scrollTo({
-      left: startIndex * itemWidth,
-      behavior: 'smooth',
-    });
-  }, [index, visibleCount]);
+    const cardWidth = row.firstElementChild
+      ? row.firstElementChild.clientWidth + 16
+      : 300;
+    const amount = direction === 'left' ? -cardWidth : cardWidth;
+    row.scrollBy({ left: amount, behavior: 'smooth' });
+  };
 
   return (
     <main>
@@ -189,12 +193,23 @@ const Home = () => {
             <p>Live websites we have designed and developed for our clients</p>
           </div>
 
-          <div className='project-row-wrapper'>
+          <div className='project-row-wrapper position-relative'>
+            <button
+              className='project-nav-btn prev-btn'
+              onClick={() => handleScroll('left')}
+              aria-label='Previous project'
+              type='button'
+            >
+              <i className='bi bi-chevron-left'></i>
+            </button>
+
             <div
               className='project-row'
               id='projectRow'
               ref={rowRef}
               tabIndex={0}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               {projectsList.map((project, idx) => {
                 const style = {
@@ -211,33 +226,19 @@ const Home = () => {
                     className='project-item'
                     style={style}
                   >
-                    {/* Screenshot fills the full card */}
-                    <img
-                      src={thumbUrl(project.url)}
-                      alt={`${project.name} preview`}
-                      loading='lazy'
-                      onLoad={(e) => { e.target.style.opacity = 1; }}
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                      style={{
-                        width: '100%', height: '220px',
-                        objectFit: 'cover', display: 'block',
-                        opacity: 0, transition: 'opacity 0.4s ease',
-                      }}
-                    />
-                    {/* Fallback if screenshot fails */}
-                    <div style={{
-                      display: 'none', width: '100%', height: '220px',
-                      alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
-                      gap: '0.5rem', background: 'var(--surface-strong)', color: 'var(--accent-color)',
-                    }}>
-                      <i className='bi bi-globe2' style={{ fontSize: '2.5rem' }}></i>
-                      <small style={{ color: 'var(--default-color)', fontSize: '0.8rem' }}>{project.name}</small>
+                    {/* Live website rendered via scaled iframe */}
+                    <div className='project-iframe-container'>
+                      <iframe
+                        src={project.url}
+                        title={project.name}
+                        loading='lazy'
+                        scrolling='no'
+                        className='project-iframe'
+                        tabIndex={-1}
+                      />
                     </div>
 
-                    {/* Always-visible bottom name bar */}
+                    {/* Transparent bottom name bar */}
                     <div className='project-name-bar'>
                       <span className='project-tag-badge'>{project.tag}</span>
                       <span className='project-title'>{project.name}</span>
@@ -246,6 +247,15 @@ const Home = () => {
                 );
               })}
             </div>
+
+            <button
+              className='project-nav-btn next-btn'
+              onClick={() => handleScroll('right')}
+              aria-label='Next project'
+              type='button'
+            >
+              <i className='bi bi-chevron-right'></i>
+            </button>
           </div>
         </div>
       </section>

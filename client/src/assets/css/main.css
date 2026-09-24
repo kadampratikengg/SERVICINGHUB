@@ -463,25 +463,75 @@ textarea.form-control:focus {
 }
 
 .project-row-wrapper {
-  overflow: hidden;
+  position: relative;
+  overflow: visible;
   border-radius: var(--radius-xl);
+  padding: 0 0.5rem;
 }
 
 .project-row {
   display: flex;
-  gap: 0.6rem;
+  gap: 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
 }
 
 .project-row::-webkit-scrollbar {
   display: none;
 }
 
+/* Navigation Arrow Buttons */
+.project-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: all 0.2s ease;
+}
+
+.project-nav-btn:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+  left: -20px;
+}
+
+.next-btn {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .prev-btn {
+    left: -8px;
+  }
+  .next-btn {
+    right: -8px;
+  }
+}
+
 /* Project cards — screenshot fills full card, overlay on hover */
 .project-item {
+  scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
   min-width: 240px;
@@ -490,6 +540,8 @@ textarea.form-control:focus {
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .project-item:hover {
@@ -508,7 +560,7 @@ textarea.form-control:focus {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  background: transparent;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.85) 0%, transparent 100%);
 }
 
 .project-tag-badge {
@@ -517,7 +569,7 @@ textarea.form-control:focus {
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--accent-color);
-  background: rgba(37,99,235,0.22);
+  background: rgba(37, 99, 235, 0.22);
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
   width: fit-content;
@@ -530,32 +582,27 @@ textarea.form-control:focus {
   line-height: 1.2;
 }
 
-
-/* Shimmer skeleton while screenshot is loading */
-@keyframes shimmer {
-  0%   { background-position: -600px 0; }
-  100% { background-position: 600px 0; }
-}
-
-.project-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    var(--surface-strong) 25%,
-    color-mix(in srgb, var(--surface-strong), white 8%) 50%,
-    var(--surface-strong) 75%
-  );
-  background-size: 600px 100%;
-  animation: shimmer 1.4s infinite linear;
-  z-index: 0;
-}
-
-.project-item img,
-.project-item > div {
+/* Live website iframe preview */
+.project-iframe-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: var(--surface-strong);
   position: relative;
-  z-index: 1;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.project-iframe {
+  /* Render at 1280px wide then scale to 25% to fit card */
+  --scale: 0.25;
+  width:  calc(100% / var(--scale));   /* 4× container width ≈ desktop viewport */
+  height: calc(220px / var(--scale));  /* proportional height */
+  border: none;
+  transform: scale(var(--scale)) translateZ(0);
+  transform-origin: 0 0;
+  pointer-events: none;                /* clicks fall through to <a> card */
+  display: block;
 }
 
 .service-item,
