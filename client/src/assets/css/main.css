@@ -530,31 +530,6 @@ textarea.form-control:focus {
   line-height: 1.2;
 }
 
-/* Full-card hover overlay with Preview button — no separate section */
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background: rgba(2, 6, 23, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.project-item:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-overlay .btn {
-  transform: translateY(8px);
-  transition: transform 0.28s ease;
-}
-
-.project-item:hover .project-overlay .btn {
-  transform: translateY(0);
-}
 
 /* Shimmer skeleton while screenshot is loading */
 @keyframes shimmer {

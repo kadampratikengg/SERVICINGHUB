@@ -203,7 +203,14 @@ const Home = () => {
                 };
 
                 return (
-                  <div key={idx} className='project-item project-thumb-wrap' style={style}>
+                  <a
+                    key={idx}
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='project-item'
+                    style={style}
+                  >
                     {/* Screenshot fills the full card */}
                     <img
                       src={thumbUrl(project.url)}
@@ -235,20 +242,7 @@ const Home = () => {
                       <span className='project-tag-badge'>{project.tag}</span>
                       <span className='project-title'>{project.name}</span>
                     </div>
-
-                    {/* Hover overlay — Preview button only, no separate section */}
-                    <div className='project-overlay'>
-                      <a
-                        href={project.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='btn btn-primary btn-sm px-4'
-                      >
-                        <i className='bi bi-box-arrow-up-right me-2'></i>
-                        Preview
-                      </a>
-                    </div>
-                  </div>
+                  </a>
                 );
               })}
             </div>
