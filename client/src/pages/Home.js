@@ -42,8 +42,9 @@ const projectsList = [
     url: 'https://www.phoenixsportsacademy.in/',
     tag: 'Sports Academy',
   },
-];
-
+// High-speed website screenshot API (60FPS ultra-smooth scrolling)
+const getScreenshotUrl = (url) =>
+  `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
 
 const Home = () => {
   const rowRef = useRef(null);
@@ -226,19 +227,23 @@ const Home = () => {
                     className='project-item'
                     style={style}
                   >
-                    {/* Live website rendered via scaled iframe */}
-                    <div className='project-iframe-container'>
-                      <iframe
-                        src={project.url}
-                        title={project.name}
+                    {/* Live website preview image (60FPS smooth scroll) */}
+                    <div className='project-img-container'>
+                      <img
+                        src={getScreenshotUrl(project.url)}
+                        alt={`${project.name} preview`}
                         loading='lazy'
-                        scrolling='no'
-                        className='project-iframe'
-                        tabIndex={-1}
+                        className='project-img'
+                        onLoad={(e) => {
+                          e.target.classList.add('loaded');
+                        }}
+                        onError={(e) => {
+                          e.target.src = `https://s0.wp.com/mshots/v1/${encodeURIComponent(project.url)}?w=800&h=500`;
+                        }}
                       />
                     </div>
 
-                    {/* Transparent bottom name bar */}
+                    {/* Bottom name bar */}
                     <div className='project-name-bar'>
                       <span className='project-tag-badge'>{project.tag}</span>
                       <span className='project-title'>{project.name}</span>

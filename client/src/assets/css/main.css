@@ -582,29 +582,31 @@ textarea.form-control:focus {
   line-height: 1.2;
 }
 
-/* Live website iframe preview */
-.project-iframe-container {
+/* Live website image preview */
+.project-img-container {
   width: 100%;
   height: 220px;
   overflow: hidden;
   background: var(--surface-strong);
   position: relative;
-  will-change: transform;
-  transform: translateZ(0);
 }
 
-.project-iframe {
-  /* Render at 1280px wide then scale to 25% to fit card */
-  --scale: 0.25;
-  width:  calc(100% / var(--scale));   /* 4× container width ≈ desktop viewport */
-  height: calc(220px / var(--scale));  /* proportional height */
-  border: none;
-  transform: scale(var(--scale)) translateZ(0);
-  transform-origin: 0 0;
-  pointer-events: none;                /* clicks fall through to <a> card */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   display: block;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.35s ease;
 }
 
+.project-img.loaded {
+  opacity: 1;
+}
+
+.project-item:hover .project-img {
+  transform: scale(1.06);
 .service-item,
 .pricing-item {
   border-radius: var(--radius-lg);
