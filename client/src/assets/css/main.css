@@ -531,6 +531,34 @@ textarea.form-control:focus {
   transform: translateY(0);
 }
 
+/* Shimmer skeleton while screenshot is loading */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.project-thumb-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--surface-strong) 25%,
+    color-mix(in srgb, var(--surface-strong), white 8%) 50%,
+    var(--surface-strong) 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  z-index: 0;
+  border-radius: 0;
+}
+
+.project-thumb-wrap img,
+.project-thumb-wrap > div {
+  position: relative;
+  z-index: 1;
+}
+
 .service-item,
 .pricing-item {
   border-radius: var(--radius-lg);

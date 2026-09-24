@@ -44,9 +44,10 @@ const projectsList = [
   },
 ];
 
-// Generate a live screenshot via thum.io (free, no API key)
+// WordPress mShots — 100% free, no API key, no signup required
+// First load may take a few seconds to render; subsequent loads use cache.
 const thumbUrl = (url) =>
-  `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
+  `https://s0.wp.com/mshots/v1/${encodeURIComponent(url)}?w=600&h=400`;
 
 
 
@@ -208,9 +209,25 @@ const Home = () => {
                       <img
                         src={thumbUrl(project.url)}
                         alt={`${project.name} preview`}
-                        style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }}
+                        className='project-screenshot'
                         loading='lazy'
+                        onLoad={(e) => { e.target.style.opacity = 1; }}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                        style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block', opacity: 0, transition: 'opacity 0.4s ease' }}
                       />
+                      {/* Fallback shown if screenshot fails */}
+                      <div style={{
+                        display: 'none', width: '100%', height: '180px',
+                        alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
+                        gap: '0.5rem', background: 'var(--surface-strong)',
+                        color: 'var(--accent-color)',
+                      }}>
+                        <i className='bi bi-globe2' style={{ fontSize: '2rem' }}></i>
+                        <small style={{ color: 'var(--default-color)', fontSize: '0.75rem' }}>{project.name}</small>
+                      </div>
                       {/* Hover overlay with Preview button */}
                       <div className='project-overlay'>
                         <a
