@@ -128,14 +128,14 @@ const Home = () => {
                 <h1 className='appinventiv-heading text-white mb-3 max-w-900'>
                   Transforming Vision into <span className='text-gradient'>World-Class Digital Products</span>
                 </h1>
-                <p className='text-white-50 fs-5 mb-4 max-w-750'>
+                <p className='text-white-50 fs-6 mb-4 max-w-750'>
                   We design, build, and scale custom software applications, cloud infrastructure, DevOps pipelines, and enterprise IT maintenance.
                 </p>
                 <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3'>
+                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-2'>
                     Talk to an Expert <i className='bi bi-arrow-right ms-2'></i>
                   </Link>
-                  <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-3'>
+                  <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-2'>
                     Explore Core Services
                   </Link>
                 </div>
@@ -161,14 +161,14 @@ const Home = () => {
                 <h2 className='appinventiv-heading text-white mb-3 max-w-900'>
                   Next-Gen <span className='text-gradient'>Cloud &amp; DevOps Engineering</span>
                 </h2>
-                <p className='text-white-50 fs-5 mb-4 max-w-750'>
+                <p className='text-white-50 fs-6 mb-4 max-w-750'>
                   AWS | Azure | GCP | Kubernetes | Docker | Terraform | CI/CD Automation
                 </p>
                 <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/services' className='btn btn-primary btn-lg px-4 py-3'>
+                  <Link to='/services' className='btn btn-primary btn-lg px-4 py-2'>
                     View Cloud Solutions <i className='bi bi-arrow-right ms-2'></i>
                   </Link>
-                  <Link to='/contact' className='btn btn-outline-light btn-lg px-4 py-3'>
+                  <Link to='/contact' className='btn btn-outline-light btn-lg px-4 py-2'>
                     Consult an Architect
                   </Link>
                 </div>
@@ -194,11 +194,11 @@ const Home = () => {
                 <h2 className='appinventiv-heading text-white mb-3 max-w-900'>
                   Enterprise IT Infra &amp; <span className='text-gradient'>Electronics Solutions</span>
                 </h2>
-                <p className='text-white-50 fs-5 mb-4 max-w-750'>
+                <p className='text-white-50 fs-6 mb-4 max-w-750'>
                   Full hardware maintenance, CCTV security setups, and field servicing under K Electronics
                 </p>
                 <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3'>
+                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-2'>
                     Schedule Maintenance <i className='bi bi-arrow-right ms-2'></i>
                   </Link>
                 </div>
