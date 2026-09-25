@@ -11,7 +11,6 @@ import About from './pages/About';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 
-import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -54,7 +53,6 @@ function App() {
             <Route path='/services/:slug' element={<ServiceDetail />} />
             <Route path='/Services' element={<Services />} />
             <Route path='/services.js' element={<Services />} />
-            <Route path='/pricing' element={<Pricing />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/blog' element={<Blog />} />
             <Route path='/blog/:id' element={<BlogPost />} />

@@ -43,9 +43,6 @@ const Navbar = ({ theme, onToggleTheme }) => {
               <Link to='/services'>Services</Link>
             </li>
             <li>
-              <Link to='/pricing'>Pricing</Link>
-            </li>
-            <li>
               <Link to='/blog'>Blog</Link>
             </li>
             <li>
@@ -99,13 +96,12 @@ const Navbar = ({ theme, onToggleTheme }) => {
         aria-hidden={!mobileMenuOpen}
       >
         <ul className='d-flex flex-column mb-0'>
-          {['/', '/about', '/services', '/pricing', '/blog', '/contact'].map(
+          {['/', '/about', '/services', '/blog', '/contact'].map(
             (path, idx) => {
               const labels = [
                 'Home',
                 'About',
                 'Services',
-                'Pricing',
                 'Blog',
                 'Contact',
               ];
