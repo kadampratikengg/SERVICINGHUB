@@ -11,22 +11,16 @@ const Footer = () => {
         <div className='footer-surface'>
           <div className='row gy-4'>
             <div className='col-lg-4 col-md-6'>
-              <Link to='/' className='logo d-inline-flex align-items-center gap-3 mb-3'>
+              <Link to='/' className='logo d-inline-flex align-items-center mb-3'>
                 {logoVisible ? (
                   <img
                     src={logoPath}
-                    alt='IT Servicing Hub Logo'
+                    alt='IT Servicing Hub'
                     onError={() => setLogoVisible(false)}
                     className='logo-image'
                   />
                 ) : (
-                  <span className='logo-fallback'>
-                    <span className='logo-badge'>ITH</span>
-                    <span>
-                      <span className='logo-title d-block'>IT Servicing Hub</span>
-                      <small className='logo-subtitle'>Technology Services</small>
-                    </span>
-                  </span>
+                  <span className='logo-text-only'>IT Servicing Hub</span>
                 )}
               </Link>
 

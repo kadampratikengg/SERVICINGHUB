@@ -8,34 +8,34 @@
   --heading-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --nav-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --background-color: #f5f8ff;
+  --background-color: #f8fafc;
   --surface-color: #ffffff;
-  --surface-strong: #edf3ff;
-  --default-color: #31415a;
-  --heading-color: #102033;
+  --surface-strong: #f1f5f9;
+  --default-color: #334155;
+  --heading-color: #0f172a;
   --accent-color: #2563eb;
-  --accent-strong: #0f172a;
-  --accent-soft: rgba(37, 99, 235, 0.14);
+  --accent-strong: #1e293b;
+  --accent-soft: rgba(37, 99, 235, 0.12);
   --contrast-color: #ffffff;
-  --border-color: rgba(30, 41, 59, 0.12);
+  --border-color: rgba(148, 163, 184, 0.22);
   --shadow-color: 15, 23, 42;
-  --radius-xl: 28px;
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
 }
 
 [data-bs-theme='dark'] {
-  --background-color: #07111f;
-  --surface-color: #0c1728;
-  --surface-strong: #111f35;
-  --default-color: #c9d6ea;
-  --heading-color: #f4f7fb;
-  --accent-color: #5ea0ff;
-  --accent-strong: #d6e7ff;
-  --accent-soft: rgba(94, 160, 255, 0.16);
-  --contrast-color: #081120;
-  --border-color: rgba(148, 163, 184, 0.2);
+  --background-color: #090d16;
+  --surface-color: #0f172a;
+  --surface-strong: #1e293b;
+  --default-color: #cbd5e1;
+  --heading-color: #f8fafc;
+  --accent-color: #3b82f6;
+  --accent-strong: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.18);
+  --contrast-color: #090d16;
+  --border-color: rgba(148, 163, 184, 0.18);
   --shadow-color: 2, 6, 23;
 }
 
@@ -314,43 +314,22 @@ textarea.form-control:focus {
 }
 
 .logo-image {
-  max-height: 46px;
+  max-height: 42px;
   width: auto;
+  object-fit: contain;
+  transition: filter 0.3s ease;
 }
 
-.logo-fallback {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
+[data-bs-theme='dark'] .logo-image {
+  filter: invert(1) brightness(1.8) contrast(1.2);
 }
 
-.logo-badge {
-  width: 2.85rem;
-  height: 2.85rem;
-  border-radius: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--contrast-color);
-  background: linear-gradient(135deg, var(--accent-color), #7c3aed);
-  box-shadow: 0 16px 28px rgba(37, 99, 235, 0.28);
-}
-
-.logo-title {
+.logo-text-only {
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--heading-color);
-  font-size: 1.08rem;
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.logo-subtitle {
-  color: var(--default-color);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .navmenu ul {

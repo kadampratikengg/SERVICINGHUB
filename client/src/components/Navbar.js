@@ -12,22 +12,16 @@ const Navbar = ({ theme, onToggleTheme }) => {
   return (
     <header className='header fixed-top'>
       <div className='container header-inner d-flex align-items-center justify-content-between'>
-        <Link to='/' className='logo d-flex align-items-center gap-3'>
+        <Link to='/' className='logo d-flex align-items-center'>
           {logoVisible ? (
             <img
               src={logoPath}
-              alt='IT Servicing Hub Logo'
+              alt='IT Servicing Hub'
               onError={() => setLogoVisible(false)}
               className='logo-image'
             />
           ) : (
-            <span className='logo-fallback'>
-              <span className='logo-badge'>ITH</span>
-              <span>
-                <span className='logo-title d-block'>IT Servicing Hub</span>
-                <small className='logo-subtitle'>Technology Services</small>
-              </span>
-            </span>
+            <span className='logo-text-only'>IT Servicing Hub</span>
           )}
         </Link>
 
