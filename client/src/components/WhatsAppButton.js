@@ -1,11 +1,8 @@
 import React from 'react';
 
 const WhatsAppButton = () => {
-  const whatsappNumber = process.env.REACT_APP_WHATSAPP_NUMBER || '919404360234';
-  const defaultMessage = encodeURIComponent(
-    'Hello IT Servicing Hub! I would like to inquire about your technology & cloud services.'
-  );
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
+  const rawNumber = process.env.REACT_APP_WHATSAPP_NUMBER || '+919404360234';
+  const whatsappUrl = `https://wa.me/${rawNumber.replace(/\s+/g, '')}`;
 
   return (
     <a
