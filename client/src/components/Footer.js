@@ -114,12 +114,14 @@ const Footer = () => {
             <div className='col-lg-3 col-md-4'>
               <h4>Contact</h4>
               <div className='footer-contact-card'>
-                <p className='mb-2'>Satara, Maharashtra 415011, India</p>
                 <p className='mb-2'>
-                  <strong>Phone:</strong> +91 9876543210
+                  {process.env.REACT_APP_ADDRESS || 'Satara, Maharashtra 415011, India'}
+                </p>
+                <p className='mb-2'>
+                  <strong>Phone:</strong> {process.env.REACT_APP_PHONE_NUMBER || '+91 9404360234'}
                 </p>
                 <p className='mb-0'>
-                  <strong>Email:</strong> info@itservicinghub.in
+                  <strong>Email:</strong> {process.env.REACT_APP_EMAIL || 'info@itservicinghub.in'}
                 </p>
               </div>
             </div>
