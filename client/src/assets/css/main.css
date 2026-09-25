@@ -317,7 +317,8 @@ textarea.form-control:focus {
   max-height: 64px;
   width: auto;
   object-fit: contain;
-  transition: filter 0.3s ease, transform 0.2s ease;
+  mix-blend-mode: multiply;
+  transition: filter 0.3s ease, mix-blend-mode 0.3s ease, transform 0.2s ease;
 }
 
 .footer .logo-image {
@@ -326,6 +327,7 @@ textarea.form-control:focus {
 
 [data-bs-theme='dark'] .logo-image {
   filter: invert(1) brightness(1.8) contrast(1.2);
+  mix-blend-mode: screen;
 }
 
 .logo-text-only {
