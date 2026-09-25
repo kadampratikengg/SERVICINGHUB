@@ -67,6 +67,10 @@ const Navbar = ({ theme, onToggleTheme }) => {
             <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
           </button>
 
+          <Link to='/contact' className='btn btn-sm btn-primary d-none d-sm-inline-flex align-items-center gap-1'>
+            Contact Us <i className='bi bi-arrow-right-short fs-6'></i>
+          </Link>
+
           {user ? (
             <div className='user-pill d-flex align-items-center gap-2'>
               <span className='user-avatar'>

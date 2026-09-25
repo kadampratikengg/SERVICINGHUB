@@ -101,7 +101,7 @@ const Home = () => {
 
   return (
     <main>
-      {/* ── 1. Hero Banner Carousel ── */}
+      {/* ── 1. Appinventiv / Apple Hero Section ── */}
       <section className='hero p-0 m-0 w-100' style={{ overflow: 'hidden' }}>
         <div
           id='heroCarousel'
@@ -109,7 +109,7 @@ const Home = () => {
           data-bs-ride='carousel'
         >
           <div className='carousel-inner'>
-            {/* Slide 1 — Main Overview */}
+            {/* Slide 1 — Main Engineering Vision */}
             <div
               className='carousel-item active'
               style={{
@@ -121,25 +121,28 @@ const Home = () => {
                 height: '100vh',
               }}
             >
-              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100'>
-                <h2 className='text-white fw-bold mb-3'>
-                  Welcome to IT Servicing Hub
-                </h2>
-                <p className='text-white mb-4'>
-                  Modern Software Engineering, Cloud Operations &amp; Electronics Servicing
+              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100 px-3'>
+                <div className='hero-pill-badge'>
+                  <i className='bi bi-stars'></i> Premier Digital Product &amp; Cloud Agency
+                </div>
+                <h1 className='appinventiv-heading text-white mb-3 max-w-900'>
+                  Transforming Vision into <span className='text-gradient'>World-Class Digital Products</span>
+                </h1>
+                <p className='text-white-50 fs-5 mb-4 max-w-750'>
+                  We design, build, and scale custom software applications, cloud infrastructure, DevOps pipelines, and enterprise IT maintenance.
                 </p>
                 <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/contact' className='btn btn-primary btn-lg'>
-                    Get Started Now
+                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3'>
+                    Talk to an Expert <i className='bi bi-arrow-right ms-2'></i>
                   </Link>
-                  <Link to='/services' className='btn btn-outline-light btn-lg'>
-                    Explore Services
+                  <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-3'>
+                    Explore Core Services
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Slide 2 — Cloud & DevOps */}
+            {/* Slide 2 — Cloud & DevOps Infrastructure */}
             <div
               className='carousel-item'
               style={{
@@ -151,23 +154,28 @@ const Home = () => {
                 height: '100vh',
               }}
             >
-              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100'>
-                <h2 className='text-white fw-bold mb-3'>Cloud &amp; DevOps Automation</h2>
-                <p className='text-white mb-4'>
-                  AWS | Azure | GCP | Kubernetes | CI/CD | Docker | Terraform
+              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100 px-3'>
+                <div className='hero-pill-badge'>
+                  <i className='bi bi-cloud-check-fill'></i> Cloud Architecture &amp; DevOps
+                </div>
+                <h2 className='appinventiv-heading text-white mb-3 max-w-900'>
+                  Next-Gen <span className='text-gradient'>Cloud &amp; DevOps Engineering</span>
+                </h2>
+                <p className='text-white-50 fs-5 mb-4 max-w-750'>
+                  AWS | Azure | GCP | Kubernetes | Docker | Terraform | CI/CD Automation
                 </p>
                 <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/services' className='btn btn-primary btn-lg'>
-                    View Cloud Solutions
+                  <Link to='/services' className='btn btn-primary btn-lg px-4 py-3'>
+                    View Cloud Solutions <i className='bi bi-arrow-right ms-2'></i>
                   </Link>
-                  <Link to='/contact' className='btn btn-outline-light btn-lg'>
+                  <Link to='/contact' className='btn btn-outline-light btn-lg px-4 py-3'>
                     Consult an Architect
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Slide 3 — Electronics & Infrastructure */}
+            {/* Slide 3 — Electronics & Hardware Servicing */}
             <div
               className='carousel-item'
               style={{
@@ -179,16 +187,19 @@ const Home = () => {
                 height: '100vh',
               }}
             >
-              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100'>
-                <h2 className='text-white fw-bold mb-3'>
-                  Electronics &amp; IT Maintenance
+              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100 px-3'>
+                <div className='hero-pill-badge'>
+                  <i className='bi bi-tools'></i> Hardware &amp; Electronics Servicing
+                </div>
+                <h2 className='appinventiv-heading text-white mb-3 max-w-900'>
+                  Enterprise IT Infra &amp; <span className='text-gradient'>Electronics Solutions</span>
                 </h2>
-                <p className='text-white mb-4'>
-                  Full hardware servicing, CCTV installation &amp; infrastructure support under K Electronics
+                <p className='text-white-50 fs-5 mb-4 max-w-750'>
+                  Full hardware maintenance, CCTV security setups, and field servicing under K Electronics
                 </p>
                 <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/contact' className='btn btn-primary btn-lg'>
-                    Book Servicing
+                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3'>
+                    Schedule Maintenance <i className='bi bi-arrow-right ms-2'></i>
                   </Link>
                 </div>
               </div>
@@ -215,33 +226,33 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 2. Key Metrics Bar ── */}
+      {/* ── 2. Impact Metrics Banner ── */}
       <section className='section pt-5 pb-4'>
         <div className='container'>
           <div className='stats-banner'>
             <div className='row text-center gy-4'>
               <div className='col-6 col-md-3'>
                 <div className='stat-item'>
+                  <h3>300+</h3>
+                  <p>Digital Products Delivered</p>
+                </div>
+              </div>
+              <div className='col-6 col-md-3'>
+                <div className='stat-item'>
+                  <h3>99.99%</h3>
+                  <p>Infrastructure Uptime SLA</p>
+                </div>
+              </div>
+              <div className='col-6 col-md-3'>
+                <div className='stat-item'>
                   <h3>150+</h3>
-                  <p>Projects Delivered</p>
+                  <p>Certified Tech Engineers</p>
                 </div>
               </div>
               <div className='col-6 col-md-3'>
                 <div className='stat-item'>
-                  <h3>99.9%</h3>
-                  <p>Uptime SLA Guarantee</p>
-                </div>
-              </div>
-              <div className='col-6 col-md-3'>
-                <div className='stat-item'>
-                  <h3>24/7</h3>
-                  <p>Managed IT Support</p>
-                </div>
-              </div>
-              <div className='col-6 col-md-3'>
-                <div className='stat-item'>
-                  <h3>100+</h3>
-                  <p>Satisfied Clients</p>
+                  <h3>98%</h3>
+                  <p>Client Retention Rate</p>
                 </div>
               </div>
             </div>
@@ -249,78 +260,78 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 3. Featured Service Pillars ── */}
+      {/* ── 3. Appinventiv-Style Core Engineering Solutions ── */}
       <section className='section'>
         <div className='container'>
           <div className='section-title text-center'>
-            <h2>Our Core Expertise</h2>
-            <p>Comprehensive technology services tailored for startups, SMEs, and enterprises</p>
+            <h2>End-to-End Digital Transformation Services</h2>
+            <p>From concept to enterprise scale, we deliver full-cycle software, cloud, and IT maintenance solutions</p>
           </div>
 
           <div className='row gy-4'>
-            {/* Pillar 1 */}
+            {/* Solution 1 */}
             <div className='col-lg-4 col-md-6'>
               <div className='feature-box'>
                 <div className='feature-icon'>
                   <i className='bi bi-code-slash'></i>
                 </div>
-                <h4 className='mb-3'>Software &amp; Web Solutions</h4>
+                <h4 className='mb-3'>Digital Product &amp; Software Engineering</h4>
                 <p className='text-muted mb-4'>
-                  Custom web apps, enterprise full-stack portals, REST APIs, and high-conversion e-commerce platforms engineered for scale.
+                  Custom web applications, enterprise microservices, mobile apps (React Native / Flutter), REST APIs, and scalable e-commerce portals.
                 </p>
                 <Link to='/services' className='fw-bold text-decoration-none'>
-                  Learn More <i className='bi bi-arrow-right ms-1'></i>
+                  Explore Product Engineering <i className='bi bi-arrow-right ms-1'></i>
                 </Link>
               </div>
             </div>
 
-            {/* Pillar 2 */}
+            {/* Solution 2 */}
             <div className='col-lg-4 col-md-6'>
               <div className='feature-box'>
                 <div className='feature-icon'>
-                  <i className='bi bi-cloud-check'></i>
+                  <i className='bi bi-cloud-arrow-up'></i>
                 </div>
-                <h4 className='mb-3'>Cloud &amp; DevOps Engineering</h4>
+                <h4 className='mb-3'>Cloud Architecture &amp; DevOps Automation</h4>
                 <p className='text-muted mb-4'>
-                  AWS/Azure migrations, Docker containerization, Kubernetes orchestrations, CI/CD automation, and Infrastructure as Code.
+                  AWS/Azure migrations, Docker containerization, Kubernetes cluster management, CI/CD deployment pipelines, and Infrastructure as Code (Terraform).
                 </p>
                 <Link to='/services' className='fw-bold text-decoration-none'>
-                  Learn More <i className='bi bi-arrow-right ms-1'></i>
+                  Explore Cloud &amp; DevOps <i className='bi bi-arrow-right ms-1'></i>
                 </Link>
               </div>
             </div>
 
-            {/* Pillar 3 */}
+            {/* Solution 3 */}
             <div className='col-lg-4 col-md-6'>
               <div className='feature-box'>
                 <div className='feature-icon'>
-                  <i className='bi bi-tools'></i>
+                  <i className='bi bi-shield-lock'></i>
                 </div>
-                <h4 className='mb-3'>IT &amp; Electronics Servicing</h4>
+                <h4 className='mb-3'>Cybersecurity &amp; Managed Operations</h4>
                 <p className='text-muted mb-4'>
-                  Laptop &amp; desktop repairs, CCTV security installations, UPS battery replacement, and network infrastructure maintenance.
+                  Cloudflare DDoS protection, SSL certificate management, vulnerability scanning, active threat monitoring, and 24/7 incident response.
                 </p>
                 <Link to='/services' className='fw-bold text-decoration-none'>
-                  Learn More <i className='bi bi-arrow-right ms-1'></i>
+                  Explore Managed Security <i className='bi bi-arrow-right ms-1'></i>
                 </Link>
               </div>
             </div>
           </div>
 
           <div className='text-center mt-5'>
-            <Link to='/services' className='btn btn-primary btn-lg'>
-              Explore All Services <i className='bi bi-arrow-right ms-2'></i>
+            <Link to='/services' className='btn btn-primary btn-lg px-4 py-3'>
+              View All Services &amp; Technical Capabilities <i className='bi bi-arrow-right ms-2'></i>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── 4. Our Recent Projects Showcase ── */}
+      {/* ── 4. Apple-Style Large Featured Projects Showcase (60FPS Slider) ── */}
       <section className='section text-center mb-5 p-0'>
         <div className='container'>
           <div className='section-title text-center'>
-            <h2>Our Recent Projects</h2>
-            <p>Live websites we have designed and developed for our clients</p>
+            <h2>Featured Client Projects &amp; Case Studies</h2>
+            <p>Explore live web applications and digital platforms we have built for leading businesses</p>
           </div>
 
           <div className='project-row-wrapper position-relative'>
@@ -394,59 +405,51 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 5. Why Choose Us ── */}
+      {/* ── 5. Appinventiv-Style "Our Delivery Process" ── */}
       <section className='section bg-body-tertiary'>
         <div className='container'>
           <div className='section-title text-center'>
-            <h2>Why Choose IT Servicing Hub?</h2>
-            <p>We combine modern tech stack with reliable, hands-on operational delivery</p>
+            <h2>Our Proven 4-Step Engineering Process</h2>
+            <p>How we take your idea from technical strategy to continuous deployment</p>
           </div>
 
           <div className='row gy-4'>
             <div className='col-md-6 col-lg-3'>
-              <div className='surface-panel p-4 h-100 text-center'>
-                <div className='feature-icon mx-auto'>
-                  <i className='bi bi-lightning-charge'></i>
-                </div>
-                <h5>Rapid Turnaround</h5>
+              <div className='process-step-card'>
+                <div className='process-step-number'>01</div>
+                <h5>Discovery &amp; Strategy</h5>
                 <p className='text-muted small mb-0'>
-                  Fast delivery and agile sprints to launch your digital products on time.
+                  Deep dive into user requirements, system architecture, database design, and cloud capacity planning.
                 </p>
               </div>
             </div>
 
             <div className='col-md-6 col-lg-3'>
-              <div className='surface-panel p-4 h-100 text-center'>
-                <div className='feature-icon mx-auto'>
-                  <i className='bi bi-shield-check'></i>
-                </div>
-                <h5>Robust Security</h5>
+              <div className='process-step-card'>
+                <div className='process-step-number'>02</div>
+                <h5>UI/UX &amp; Prototyping</h5>
                 <p className='text-muted small mb-0'>
-                  Enterprise-grade encryption, vulnerability scanning, and SSL configurations.
+                  Crafting Apple-grade interactive wireframes, design systems, and responsive user flows.
                 </p>
               </div>
             </div>
 
             <div className='col-md-6 col-lg-3'>
-              <div className='surface-panel p-4 h-100 text-center'>
-                <div className='feature-icon mx-auto'>
-                  <i className='bi bi-people'></i>
-                </div>
-                <h5>Certified Engineers</h5>
+              <div className='process-step-card'>
+                <div className='process-step-number'>03</div>
+                <h5>Agile Engineering</h5>
                 <p className='text-muted small mb-0'>
-                  Experienced cloud architects, full-stack developers, and hardware technicians.
+                  High-speed sprint cycles, REST/GraphQL API integration, CI/CD pipelines, and rigorous code reviews.
                 </p>
               </div>
             </div>
 
             <div className='col-md-6 col-lg-3'>
-              <div className='surface-panel p-4 h-100 text-center'>
-                <div className='feature-icon mx-auto'>
-                  <i className='bi bi-headset'></i>
-                </div>
-                <h5>24/7 Monitoring</h5>
+              <div className='process-step-card'>
+                <div className='process-step-number'>04</div>
+                <h5>Launch &amp; 24/7 Operations</h5>
                 <p className='text-muted small mb-0'>
-                  Proactive system tracking and rapid incident support to minimize downtime.
+                  Zero-downtime deployment, cloud autoscaling, active security monitoring, and SLA maintenance.
                 </p>
               </div>
             </div>
@@ -454,11 +457,65 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 6. Tech Stack Badges ── */}
+      {/* ── 6. Industries We Empower ── */}
       <section className='section text-center'>
         <div className='container'>
           <div className='section-title text-center'>
-            <h2>Technologies We Master</h2>
+            <h2>Industries We Empower</h2>
+            <p>Delivering domain-specific software, cloud, and IT maintenance solutions</p>
+          </div>
+
+          <div className='row gy-4'>
+            <div className='col-6 col-md-4 col-lg-2'>
+              <div className='industry-card'>
+                <i className='bi bi-credit-card-2-front industry-icon'></i>
+                <h6 className='mb-0 fw-bold'>FinTech</h6>
+              </div>
+            </div>
+
+            <div className='col-6 col-md-4 col-lg-2'>
+              <div className='industry-card'>
+                <i className='bi bi-cart3 industry-icon'></i>
+                <h6 className='mb-0 fw-bold'>E-Commerce</h6>
+              </div>
+            </div>
+
+            <div className='col-6 col-md-4 col-lg-2'>
+              <div className='industry-card'>
+                <i className='bi bi-heart-pulse industry-icon'></i>
+                <h6 className='mb-0 fw-bold'>Healthcare</h6>
+              </div>
+            </div>
+
+            <div className='col-6 col-md-4 col-lg-2'>
+              <div className='industry-card'>
+                <i className='bi bi-airplane industry-icon'></i>
+                <h6 className='mb-0 fw-bold'>Travel &amp; Logistics</h6>
+              </div>
+            </div>
+
+            <div className='col-6 col-md-4 col-lg-2'>
+              <div className='industry-card'>
+                <i className='bi bi-trophy industry-icon'></i>
+                <h6 className='mb-0 fw-bold'>Sports &amp; Fitness</h6>
+              </div>
+            </div>
+
+            <div className='col-6 col-md-4 col-lg-2'>
+              <div className='industry-card'>
+                <i className='bi bi-building industry-icon'></i>
+                <h6 className='mb-0 fw-bold'>Enterprise IT</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. Tech Stack Badges ── */}
+      <section className='section text-center bg-body-tertiary'>
+        <div className='container'>
+          <div className='section-title text-center'>
+            <h2>Modern Tech Stack We Use</h2>
             <p>Built with industry-standard frameworks, cloud platforms, and security tools</p>
           </div>
 
@@ -485,7 +542,7 @@ const Home = () => {
               <i className='bi bi-microsoft text-info'></i> Azure
             </span>
             <span className='tech-badge-item'>
-              <i className='bi bi-camera-video text-secondary'></i> CCTV &amp; Security
+              <i className='bi bi-camera-video text-secondary'></i> CCTV Systems
             </span>
             <span className='tech-badge-item'>
               <i className='bi bi-terminal text-success'></i> Linux Servers
@@ -494,12 +551,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 7. Client Testimonials ── */}
-      <section className='section bg-body-tertiary'>
+      {/* ── 8. Client Testimonials & Social Proof ── */}
+      <section className='section'>
         <div className='container'>
           <div className='section-title text-center'>
-            <h2>What Our Clients Say</h2>
-            <p>Trusted by business owners, organizations, and tech teams</p>
+            <h2>Trusted by Business Leaders</h2>
+            <p>See what enterprise CTOs and founders say about our engineering quality</p>
           </div>
 
           <div className='row gy-4'>
@@ -551,19 +608,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 8. Call to Action Banner ── */}
+      {/* ── 9. Apple / Appinventiv High-Impact CTA Banner ── */}
       <section className='section pt-4'>
         <div className='container'>
           <div className='cta-section'>
-            <h2 className='fw-bold mb-3'>Ready to Transform Your IT Infrastructure?</h2>
-            <p className='mb-4 max-w-600 mx-auto text-muted fs-5'>
-              Partner with IT Servicing Hub for reliable software engineering, cloud automation, and hardware support.
+            <h2 className='appinventiv-heading text-white mb-3'>
+              Have a Project in Mind? <br /> Let&apos;s Build Something <span className='text-gradient'>Extraordinary</span>.
+            </h2>
+            <p className='mb-4 max-w-650 mx-auto text-white-50 fs-5'>
+              Partner with IT Servicing Hub for software product engineering, cloud automation, and managed IT services.
             </p>
             <div className='d-flex gap-3 justify-content-center flex-wrap'>
-              <Link to='/contact' className='btn btn-primary btn-lg'>
-                Contact Us Today <i className='bi bi-telephone ms-2'></i>
+              <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3'>
+                Talk to Our Tech Team <i className='bi bi-telephone ms-2'></i>
               </Link>
-              <Link to='/services' className='btn btn-outline-primary btn-lg'>
+              <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-3'>
                 Browse All Services
               </Link>
             </div>
