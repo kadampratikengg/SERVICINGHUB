@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getContactDetails } from '../utils/contactStore';
 
 const Footer = () => {
   const [logoVisible, setLogoVisible] = useState(true);
+  const [contactInfo, setContactInfo] = useState(getContactDetails());
   const logoPath = '/assets/img/logo.png';
+
+  useEffect(() => {
+    setContactInfo(getContactDetails());
+  }, []);
 
   return (
     <footer id='footer' className='footer'>
@@ -109,13 +115,13 @@ const Footer = () => {
               <h4>Contact</h4>
               <div className='footer-contact-card'>
                 <p className='mb-2'>
-                  {process.env.REACT_APP_ADDRESS || 'Satara, Maharashtra 415011, India'}
+                  {contactInfo.address}
                 </p>
                 <p className='mb-2'>
-                  <strong>Phone:</strong> {process.env.REACT_APP_PHONE_NUMBER || '+91 9404360234'}
+                  <strong>Phone:</strong> {contactInfo.phone}
                 </p>
                 <p className='mb-0'>
-                  <strong>Email:</strong> {process.env.REACT_APP_EMAIL || 'info@itservicinghub.in'}
+                  <strong>Email:</strong> {contactInfo.email}
                 </p>
               </div>
             </div>

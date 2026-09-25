@@ -67,7 +67,7 @@ const Home = () => {
     return () => window.removeEventListener('resize', calc);
   }, []);
 
-  // Smooth auto-scroll carousel loop (pauses when user hovers)
+  // Smooth auto-scroll carousel loop
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {
@@ -101,158 +101,95 @@ const Home = () => {
 
   return (
     <main>
-      {/* ── 1. Appinventiv / Apple Hero Section ── */}
-      <section className='hero p-0 m-0 w-100' style={{ overflow: 'hidden' }}>
-        <div
-          id='heroCarousel'
-          className='carousel slide carousel-fade'
-          data-bs-ride='carousel'
-        >
-          <div className='carousel-inner'>
-            {/* Slide 1 — Main Engineering Vision */}
-            <div
-              className='carousel-item active'
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop&auto=format')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100vw',
-                height: '100vh',
-              }}
-            >
-              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100 px-3'>
-                <div className='hero-pill-badge'>
-                  <i className='bi bi-stars'></i> Premier Digital Product &amp; Cloud Agency
+      {/* ── 1. Modern Asymmetric Hero with System Terminal ── */}
+      <section className='hero-split-section text-white'>
+        <div className='hero-bg-glow'></div>
+        <div className='container position-relative' style={{ zIndex: 1 }}>
+          <div className='row align-items-center gy-5'>
+            {/* Left Column — Strategic Pitch */}
+            <div className='col-lg-7'>
+              <div className='d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary bg-opacity-25 border border-primary border-opacity-25 text-info mb-4'>
+                <i className='bi bi-cpu-fill'></i>
+                <span className='fw-semibold small'>Digital Product &amp; Cloud Engineering</span>
+              </div>
+              <h1 className='display-4 fw-bold mb-3 text-white lh-sm'>
+                Architecting High-Performance <span className='text-gradient'>Digital Solutions</span> &amp; Cloud Systems
+              </h1>
+              <p className='lead text-white-50 mb-4 me-lg-4 fs-6'>
+                We engineer scalable web applications, manage auto-scaling DevOps pipelines, and provide enterprise 24/7 IT infrastructure servicing tailored to your business needs.
+              </p>
+              <div className='d-flex gap-3 flex-wrap align-items-center mb-4'>
+                <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3 shadow-lg'>
+                  Talk to an Engineer <i className='bi bi-arrow-right ms-2'></i>
+                </Link>
+                <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-3'>
+                  Explore Solutions
+                </Link>
+              </div>
+              <div className='d-flex align-items-center gap-4 text-white-50 small border-top border-secondary border-opacity-25 pt-3'>
+                <div className='d-flex align-items-center gap-2'>
+                  <i className='bi bi-shield-check text-success fs-5'></i>
+                  <span>99.99% SLA Uptime</span>
                 </div>
-                <h1 className='appinventiv-heading text-white mb-3 max-w-900'>
-                  Transforming Vision into <span className='text-gradient'>World-Class Digital Products</span>
-                </h1>
-                <p className='text-white-50 fs-6 mb-4 max-w-750'>
-                  We design, build, and scale custom software applications, cloud infrastructure, DevOps pipelines, and enterprise IT maintenance.
-                </p>
-                <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-2'>
-                    Talk to an Expert <i className='bi bi-arrow-right ms-2'></i>
-                  </Link>
-                  <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-2'>
-                    Explore Core Services
-                  </Link>
+                <div className='d-flex align-items-center gap-2'>
+                  <i className='bi bi-code-square text-info fs-5'></i>
+                  <span>300+ Products Delivered</span>
                 </div>
               </div>
             </div>
 
-            {/* Slide 2 — Cloud & DevOps Infrastructure */}
-            <div
-              className='carousel-item'
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop&auto=format')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100vw',
-                height: '100vh',
-              }}
-            >
-              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100 px-3'>
-                <div className='hero-pill-badge'>
-                  <i className='bi bi-cloud-check-fill'></i> Cloud Architecture &amp; DevOps
+            {/* Right Column — Interactive Status Terminal */}
+            <div className='col-lg-5'>
+              <div className='hero-terminal-card'>
+                <div className='terminal-header'>
+                  <div className='terminal-dots'>
+                    <span className='dot-red'></span>
+                    <span className='dot-yellow'></span>
+                    <span className='dot-green'></span>
+                  </div>
+                  <div className='d-flex align-items-center gap-2 small text-muted font-monospace'>
+                    <span className='spinner-grow spinner-grow-sm text-success' role='status' style={{ width: '8px', height: '8px' }}></span>
+                    <span className='text-light'>sys-cluster-status: ACTIVE</span>
+                  </div>
                 </div>
-                <h2 className='appinventiv-heading text-white mb-3 max-w-900'>
-                  Next-Gen <span className='text-gradient'>Cloud &amp; DevOps Engineering</span>
-                </h2>
-                <p className='text-white-50 fs-6 mb-4 max-w-750'>
-                  AWS | Azure | GCP | Kubernetes | Docker | Terraform | CI/CD Automation
-                </p>
-                <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/services' className='btn btn-primary btn-lg px-4 py-2'>
-                    View Cloud Solutions <i className='bi bi-arrow-right ms-2'></i>
-                  </Link>
-                  <Link to='/contact' className='btn btn-outline-light btn-lg px-4 py-2'>
-                    Consult an Architect
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Slide 3 — Electronics & Hardware Servicing */}
-            <div
-              className='carousel-item'
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop&auto=format')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100vw',
-                height: '100vh',
-              }}
-            >
-              <div className='carousel-container d-flex flex-column justify-content-center align-items-center text-center h-100 px-3'>
-                <div className='hero-pill-badge'>
-                  <i className='bi bi-tools'></i> Hardware &amp; Electronics Servicing
-                </div>
-                <h2 className='appinventiv-heading text-white mb-3 max-w-900'>
-                  Enterprise IT Infra &amp; <span className='text-gradient'>Electronics Solutions</span>
-                </h2>
-                <p className='text-white-50 fs-6 mb-4 max-w-750'>
-                  Full hardware maintenance, CCTV security setups, and field servicing under K Electronics
-                </p>
-                <div className='d-flex gap-3 flex-wrap justify-content-center'>
-                  <Link to='/contact' className='btn btn-primary btn-lg px-4 py-2'>
-                    Schedule Maintenance <i className='bi bi-arrow-right ms-2'></i>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button
-            className='carousel-control-prev'
-            type='button'
-            data-bs-target='#heroCarousel'
-            data-bs-slide='prev'
-          >
-            <span className='carousel-control-prev-icon'></span>
-          </button>
-
-          <button
-            className='carousel-control-next'
-            type='button'
-            data-bs-target='#heroCarousel'
-            data-bs-slide='next'
-          >
-            <span className='carousel-control-next-icon'></span>
-          </button>
-        </div>
-      </section>
-
-      {/* ── 2. Impact Metrics Banner ── */}
-      <section className='section pt-5 pb-4'>
-        <div className='container'>
-          <div className='stats-banner'>
-            <div className='row text-center gy-4'>
-              <div className='col-6 col-md-3'>
-                <div className='stat-item'>
-                  <h3>300+</h3>
-                  <p>Digital Products Delivered</p>
-                </div>
-              </div>
-              <div className='col-6 col-md-3'>
-                <div className='stat-item'>
-                  <h3>99.99%</h3>
-                  <p>Infrastructure Uptime SLA</p>
-                </div>
-              </div>
-              <div className='col-6 col-md-3'>
-                <div className='stat-item'>
-                  <h3>150+</h3>
-                  <p>Certified Tech Engineers</p>
-                </div>
-              </div>
-              <div className='col-6 col-md-3'>
-                <div className='stat-item'>
-                  <h3>98%</h3>
-                  <p>Client Retention Rate</p>
+                <div className='terminal-body'>
+                  <div className='terminal-line'>
+                    <span className='terminal-prompt'>sh-cli$</span>
+                    <span className='terminal-cmd'>servicinghub cluster --status</span>
+                  </div>
+                  <div className='terminal-line'>
+                    <span className='terminal-out'>Connecting to AWS &amp; Azure Nodes...</span>
+                  </div>
+                  <div className='terminal-line'>
+                    <span className='terminal-success'>[OK]</span>
+                    <span className='terminal-out'>Node 01 (AWS Mumbai): Operational (12ms)</span>
+                  </div>
+                  <div className='terminal-line'>
+                    <span className='terminal-success'>[OK]</span>
+                    <span className='terminal-out'>Node 02 (Azure Cloud): Operational (15ms)</span>
+                  </div>
+                  <div className='terminal-line'>
+                    <span className='terminal-prompt'>sh-cli$</span>
+                    <span className='terminal-cmd'>deploy --service=ecommerce-api</span>
+                  </div>
+                  <div className='terminal-line'>
+                    <span className='terminal-success'>[SUCCESS]</span>
+                    <span className='terminal-out'>Build #4092 Deployed via CI/CD Pipeline</span>
+                  </div>
+                  <div className='terminal-metrics-bar'>
+                    <div className='terminal-stat'>
+                      <div className='terminal-stat-num'>99.99%</div>
+                      <div className='terminal-stat-lbl'>SLA Uptime</div>
+                    </div>
+                    <div className='terminal-stat'>
+                      <div className='terminal-stat-num'>12ms</div>
+                      <div className='terminal-stat-lbl'>API Latency</div>
+                    </div>
+                    <div className='terminal-stat'>
+                      <div className='terminal-stat-num'>24/7</div>
+                      <div className='terminal-stat-lbl'>NOC Support</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,78 +197,124 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 3. Appinventiv-Style Core Engineering Solutions ── */}
-      <section className='section'>
+      {/* ── 2. Minimal Horizontal Bento Metrics Bar ── */}
+      <section className='py-4 border-bottom bg-body-tertiary'>
         <div className='container'>
-          <div className='section-title text-center'>
-            <h2>End-to-End Digital Transformation Services</h2>
-            <p>From concept to enterprise scale, we deliver full-cycle software, cloud, and IT maintenance solutions</p>
-          </div>
-
-          <div className='row gy-4'>
-            {/* Solution 1 */}
-            <div className='col-lg-4 col-md-6'>
-              <div className='feature-box'>
-                <div className='feature-icon'>
-                  <i className='bi bi-code-slash'></i>
-                </div>
-                <h4 className='mb-3'>Digital Product &amp; Software Engineering</h4>
-                <p className='text-muted mb-4'>
-                  Custom web applications, enterprise microservices, mobile apps (React Native / Flutter), REST APIs, and scalable e-commerce portals.
-                </p>
-                <Link to='/services' className='fw-bold text-decoration-none'>
-                  Explore Product Engineering <i className='bi bi-arrow-right ms-1'></i>
-                </Link>
+          <div className='row text-center gy-3 divide-y divide-md-0'>
+            <div className='col-6 col-md-3 border-end-md'>
+              <div className='p-2'>
+                <h3 className='fw-bold mb-0 text-primary'>300+</h3>
+                <small className='text-muted text-uppercase tracking-wider fw-semibold'>Products Delivered</small>
               </div>
             </div>
-
-            {/* Solution 2 */}
-            <div className='col-lg-4 col-md-6'>
-              <div className='feature-box'>
-                <div className='feature-icon'>
-                  <i className='bi bi-cloud-arrow-up'></i>
-                </div>
-                <h4 className='mb-3'>Cloud Architecture &amp; DevOps Automation</h4>
-                <p className='text-muted mb-4'>
-                  AWS/Azure migrations, Docker containerization, Kubernetes cluster management, CI/CD deployment pipelines, and Infrastructure as Code (Terraform).
-                </p>
-                <Link to='/services' className='fw-bold text-decoration-none'>
-                  Explore Cloud &amp; DevOps <i className='bi bi-arrow-right ms-1'></i>
-                </Link>
+            <div className='col-6 col-md-3 border-end-md'>
+              <div className='p-2'>
+                <h3 className='fw-bold mb-0 text-primary'>99.99%</h3>
+                <small className='text-muted text-uppercase tracking-wider fw-semibold'>Cloud Infrastructure SLA</small>
               </div>
             </div>
-
-            {/* Solution 3 */}
-            <div className='col-lg-4 col-md-6'>
-              <div className='feature-box'>
-                <div className='feature-icon'>
-                  <i className='bi bi-shield-lock'></i>
-                </div>
-                <h4 className='mb-3'>Cybersecurity &amp; Managed Operations</h4>
-                <p className='text-muted mb-4'>
-                  Cloudflare DDoS protection, SSL certificate management, vulnerability scanning, active threat monitoring, and 24/7 incident response.
-                </p>
-                <Link to='/services' className='fw-bold text-decoration-none'>
-                  Explore Managed Security <i className='bi bi-arrow-right ms-1'></i>
-                </Link>
+            <div className='col-6 col-md-3 border-end-md'>
+              <div className='p-2'>
+                <h3 className='fw-bold mb-0 text-primary'>150+</h3>
+                <small className='text-muted text-uppercase tracking-wider fw-semibold'>Certified Engineers</small>
               </div>
             </div>
-          </div>
-
-          <div className='text-center mt-5'>
-            <Link to='/services' className='btn btn-primary btn-lg px-4 py-3'>
-              View All Services &amp; Technical Capabilities <i className='bi bi-arrow-right ms-2'></i>
-            </Link>
+            <div className='col-6 col-md-3'>
+              <div className='p-2'>
+                <h3 className='fw-bold mb-0 text-primary'>24 / 7</h3>
+                <small className='text-muted text-uppercase tracking-wider fw-semibold'>Active NOC Monitoring</small>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 4. Apple-Style Large Featured Projects Showcase (60FPS Slider) ── */}
-      <section className='section text-center mb-5 p-0'>
+      {/* ── 3. Asymmetric Bento Grid Solutions Section ── */}
+      <section className='section py-5'>
         <div className='container'>
-          <div className='section-title text-center'>
-            <h2>Featured Client Projects &amp; Case Studies</h2>
-            <p>Explore live web applications and digital platforms we have built for leading businesses</p>
+          <div className='section-title text-center mb-5'>
+            <span className='bento-badge'>Capabilities</span>
+            <h2 className='fw-bold'>Engineering Solutions &amp; Infrastructure</h2>
+            <p className='text-muted max-w-650 mx-auto'>
+              Tailored software engineering, cloud automation, and hardware IT maintenance engineered for reliability and scale.
+            </p>
+          </div>
+
+          <div className='bento-grid-container'>
+            {/* Bento Card 1 (8 Columns Wide) — Digital Product & Software Engineering */}
+            <div className='bento-card bento-card-8 d-flex flex-column justify-content-between'>
+              <div>
+                <span className='bento-badge'><i className='bi bi-code-slash me-1'></i> Core Engineering</span>
+                <h3 className='fw-bold mb-3'>Digital Product &amp; Software Development</h3>
+                <p className='text-muted mb-4'>
+                  We build custom web portals, enterprise microservices, cross-platform mobile applications, and secure RESTful APIs designed for high concurrency and ultra-low latency.
+                </p>
+                <div className='d-flex flex-wrap gap-2 mb-4'>
+                  <span className='bento-tech-pill'>React.js</span>
+                  <span className='bento-tech-pill'>Node.js / Express</span>
+                  <span className='bento-tech-pill'>Python &amp; Django</span>
+                  <span className='bento-tech-pill'>PostgreSQL / MongoDB</span>
+                  <span className='bento-tech-pill'>REST &amp; GraphQL</span>
+                  <span className='bento-tech-pill'>Flutter Mobile</span>
+                </div>
+              </div>
+              <div>
+                <Link to='/services' className='btn btn-outline-primary rounded-pill px-4'>
+                  Explore Product Engineering <i className='bi bi-arrow-right ms-2'></i>
+                </Link>
+              </div>
+            </div>
+
+            {/* Bento Card 2 (4 Columns Wide) — Cloud Architecture & DevOps */}
+            <div className='bento-card bento-card-4 d-flex flex-column justify-content-between'>
+              <div>
+                <span className='bento-badge'><i className='bi bi-cloud-arrow-up me-1'></i> DevOps</span>
+                <h3 className='fw-bold mb-3'>Cloud &amp; DevOps</h3>
+                <p className='text-muted mb-4'>
+                  AWS/Azure migrations, Docker container orchestration, Terraform Infrastructure as Code, and automated CI/CD pipelines.
+                </p>
+                <div className='p-3 bg-body-tertiary rounded-3 border mb-4 font-monospace small'>
+                  <div className='text-success'><i className='bi bi-check2-circle me-1'></i> AWS / Azure Certified</div>
+                  <div className='text-success'><i className='bi bi-check2-circle me-1'></i> Zero-Downtime Deploy</div>
+                  <div className='text-success'><i className='bi bi-check2-circle me-1'></i> Kubernetes Clusters</div>
+                </div>
+              </div>
+              <div>
+                <Link to='/services' className='btn btn-outline-primary rounded-pill px-4 w-100 text-center'>
+                  Cloud Solutions <i className='bi bi-arrow-right ms-1'></i>
+                </Link>
+              </div>
+            </div>
+
+            {/* Bento Card 3 (12 Columns Wide) — Managed IT, Security & Electronics */}
+            <div className='bento-card bento-card-12'>
+              <div className='row align-items-center gy-4'>
+                <div className='col-lg-6 border-end-lg'>
+                  <span className='bento-badge'><i className='bi bi-shield-lock me-1'></i> Cybersecurity</span>
+                  <h4 className='fw-bold mb-2'>Cybersecurity &amp; DDoS Protection</h4>
+                  <p className='text-muted mb-0'>
+                    Cloudflare active edge shield, automated SSL renewal, vulnerability testing, and active threat mitigation to protect business critical assets.
+                  </p>
+                </div>
+                <div className='col-lg-6'>
+                  <span className='bento-badge'><i className='bi bi-tools me-1'></i> Hardware Maintenance</span>
+                  <h4 className='fw-bold mb-2'>IT Maintenance &amp; Electronics Servicing</h4>
+                  <p className='text-muted mb-0'>
+                    Field operations under K Electronics — CCTV security setups, server rack assembly, hardware diagnostic maintenance, and network cabling.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Featured Client Projects Showcase ── */}
+      <section className='section py-5 bg-body-tertiary text-center'>
+        <div className='container'>
+          <div className='section-title text-center mb-4'>
+            <h2>Featured Client Portfolios &amp; Web Apps</h2>
+            <p>Live production systems engineered and maintained by our team</p>
           </div>
 
           <div className='project-row-wrapper position-relative'>
@@ -367,7 +350,6 @@ const Home = () => {
                     className='project-item'
                     style={style}
                   >
-                    {/* Live website preview image (60FPS smooth scroll) */}
                     <div className='project-img-container'>
                       <img
                         src={getScreenshotUrl(project.url)}
@@ -382,8 +364,6 @@ const Home = () => {
                         }}
                       />
                     </div>
-
-                    {/* Bottom name bar */}
                     <div className='project-name-bar'>
                       <span className='project-tag-badge'>{project.tag}</span>
                       <span className='project-title'>{project.name}</span>
@@ -405,51 +385,58 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 5. Appinventiv-Style "Our Delivery Process" ── */}
-      <section className='section bg-body-tertiary'>
+      {/* ── 5. Staggered Vertical Pipeline Process Section ── */}
+      <section className='section py-5'>
         <div className='container'>
-          <div className='section-title text-center'>
-            <h2>Our Proven 4-Step Engineering Process</h2>
-            <p>How we take your idea from technical strategy to continuous deployment</p>
+          <div className='section-title text-center mb-5'>
+            <span className='bento-badge'>Execution</span>
+            <h2 className='fw-bold'>Our 4-Step Engineering Pipeline</h2>
+            <p className='text-muted max-w-650 mx-auto'>
+              A structured software delivery model focused on clarity, rapid execution, and robust deployment.
+            </p>
           </div>
 
-          <div className='row gy-4'>
-            <div className='col-md-6 col-lg-3'>
-              <div className='process-step-card'>
-                <div className='process-step-number'>01</div>
-                <h5>Discovery &amp; Strategy</h5>
+          <div className='process-pipeline'>
+            {/* Step 1 */}
+            <div className='pipeline-item'>
+              <div className='pipeline-node'>01</div>
+              <div className='pipeline-content shadow-sm'>
+                <h5 className='fw-bold mb-2 text-primary'>Discovery &amp; Architecture</h5>
                 <p className='text-muted small mb-0'>
-                  Deep dive into user requirements, system architecture, database design, and cloud capacity planning.
+                  We analyze your functional requirements, define database schemas, choose technical stacks, and lay down system architecture diagrams.
                 </p>
               </div>
             </div>
 
-            <div className='col-md-6 col-lg-3'>
-              <div className='process-step-card'>
-                <div className='process-step-number'>02</div>
-                <h5>UI/UX &amp; Prototyping</h5>
+            {/* Step 2 */}
+            <div className='pipeline-item'>
+              <div className='pipeline-node'>02</div>
+              <div className='pipeline-content shadow-sm'>
+                <h5 className='fw-bold mb-2 text-primary'>UI/UX &amp; Prototype Sprint</h5>
                 <p className='text-muted small mb-0'>
-                  Crafting Apple-grade interactive wireframes, design systems, and responsive user flows.
+                  High-fidelity wireframing and user experience prototypes tailored to customer flows and brand aesthetics.
                 </p>
               </div>
             </div>
 
-            <div className='col-md-6 col-lg-3'>
-              <div className='process-step-card'>
-                <div className='process-step-number'>03</div>
-                <h5>Agile Engineering</h5>
+            {/* Step 3 */}
+            <div className='pipeline-item'>
+              <div className='pipeline-node'>03</div>
+              <div className='pipeline-content shadow-sm'>
+                <h5 className='fw-bold mb-2 text-primary'>Agile Engineering &amp; Testing</h5>
                 <p className='text-muted small mb-0'>
-                  High-speed sprint cycles, REST/GraphQL API integration, CI/CD pipelines, and rigorous code reviews.
+                  Sprint-based software development with continuous code reviews, unit testing, and automated security scans.
                 </p>
               </div>
             </div>
 
-            <div className='col-md-6 col-lg-3'>
-              <div className='process-step-card'>
-                <div className='process-step-number'>04</div>
-                <h5>Launch &amp; 24/7 Operations</h5>
+            {/* Step 4 */}
+            <div className='pipeline-item'>
+              <div className='pipeline-node'>04</div>
+              <div className='pipeline-content shadow-sm'>
+                <h5 className='fw-bold mb-2 text-primary'>Cloud Launch &amp; 24/7 Operations</h5>
                 <p className='text-muted small mb-0'>
-                  Zero-downtime deployment, cloud autoscaling, active security monitoring, and SLA maintenance.
+                  Zero-downtime deployment to cloud environments, continuous monitoring, and ongoing maintenance.
                 </p>
               </div>
             </div>
@@ -457,150 +444,124 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 6. Industries We Empower ── */}
-      <section className='section text-center'>
+      {/* ── 6. Minimal Industry Matrix ── */}
+      <section className='section py-5 bg-body-tertiary'>
         <div className='container'>
-          <div className='section-title text-center'>
-            <h2>Industries We Empower</h2>
-            <p>Delivering domain-specific software, cloud, and IT maintenance solutions</p>
+          <div className='section-title text-center mb-5'>
+            <span className='bento-badge'>Sectors</span>
+            <h2 className='fw-bold'>Industries We Empower</h2>
+            <p className='text-muted max-w-650 mx-auto'>
+              Delivering specialized IT and cloud solutions across key commercial sectors
+            </p>
           </div>
 
-          <div className='row gy-4'>
-            <div className='col-6 col-md-4 col-lg-2'>
-              <div className='industry-card'>
-                <i className='bi bi-credit-card-2-front industry-icon'></i>
-                <h6 className='mb-0 fw-bold'>FinTech</h6>
+          <div className='matrix-grid'>
+            <div className='matrix-card'>
+              <div className='matrix-icon-box'><i className='bi bi-bank'></i></div>
+              <div>
+                <h6 className='fw-bold mb-1'>FinTech &amp; Banking</h6>
+                <p className='text-muted small mb-0'>Secure payment gateways &amp; ledger systems</p>
               </div>
             </div>
 
-            <div className='col-6 col-md-4 col-lg-2'>
-              <div className='industry-card'>
-                <i className='bi bi-cart3 industry-icon'></i>
-                <h6 className='mb-0 fw-bold'>E-Commerce</h6>
+            <div className='matrix-card'>
+              <div className='matrix-icon-box'><i className='bi bi-cart3'></i></div>
+              <div>
+                <h6 className='fw-bold mb-1'>E-Commerce &amp; Retail</h6>
+                <p className='text-muted small mb-0'>High-conversion web platforms &amp; inventory</p>
               </div>
             </div>
 
-            <div className='col-6 col-md-4 col-lg-2'>
-              <div className='industry-card'>
-                <i className='bi bi-heart-pulse industry-icon'></i>
-                <h6 className='mb-0 fw-bold'>Healthcare</h6>
+            <div className='matrix-card'>
+              <div className='matrix-icon-box'><i className='bi bi-heart-pulse'></i></div>
+              <div>
+                <h6 className='fw-bold mb-1'>Healthcare Technology</h6>
+                <p className='text-muted small mb-0'>Patient portals &amp; HIPAA compliant databases</p>
               </div>
             </div>
 
-            <div className='col-6 col-md-4 col-lg-2'>
-              <div className='industry-card'>
-                <i className='bi bi-airplane industry-icon'></i>
-                <h6 className='mb-0 fw-bold'>Travel &amp; Logistics</h6>
+            <div className='matrix-card'>
+              <div className='matrix-icon-box'><i className='bi bi-globe-americas'></i></div>
+              <div>
+                <h6 className='fw-bold mb-1'>Travel &amp; Logistics</h6>
+                <p className='text-muted small mb-0'>Booking portals &amp; real-time tracking apps</p>
               </div>
             </div>
 
-            <div className='col-6 col-md-4 col-lg-2'>
-              <div className='industry-card'>
-                <i className='bi bi-trophy industry-icon'></i>
-                <h6 className='mb-0 fw-bold'>Sports &amp; Fitness</h6>
+            <div className='matrix-card'>
+              <div className='matrix-icon-box'><i className='bi bi-trophy'></i></div>
+              <div>
+                <h6 className='fw-bold mb-1'>Sports &amp; Fitness</h6>
+                <p className='text-muted small mb-0'>Academy portals &amp; membership management</p>
               </div>
             </div>
 
-            <div className='col-6 col-md-4 col-lg-2'>
-              <div className='industry-card'>
-                <i className='bi bi-building industry-icon'></i>
-                <h6 className='mb-0 fw-bold'>Enterprise IT</h6>
+            <div className='matrix-card'>
+              <div className='matrix-icon-box'><i className='bi bi-building'></i></div>
+              <div>
+                <h6 className='fw-bold mb-1'>Enterprise IT</h6>
+                <p className='text-muted small mb-0'>Managed hardware, CCTV &amp; network infra</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 7. Tech Stack Badges ── */}
-      <section className='section text-center bg-body-tertiary'>
+      {/* ── 7. Asymmetric Testimonial Section ── */}
+      <section className='section py-5'>
         <div className='container'>
-          <div className='section-title text-center'>
-            <h2>Modern Tech Stack We Use</h2>
-            <p>Built with industry-standard frameworks, cloud platforms, and security tools</p>
+          <div className='section-title text-center mb-5'>
+            <span className='bento-badge'>Client Stories</span>
+            <h2 className='fw-bold'>Trusted by Tech Founders &amp; Leaders</h2>
           </div>
 
-          <div className='d-flex flex-wrap justify-content-center gap-3'>
-            <span className='tech-badge-item'>
-              <i className='bi bi-layers text-primary'></i> React.js
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-cpu text-success'></i> Node.js
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-cloud text-warning'></i> AWS Cloud
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-box-seam text-info'></i> Docker
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-diagram-3 text-primary'></i> Kubernetes
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-shield-lock text-danger'></i> Cloudflare
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-microsoft text-info'></i> Azure
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-camera-video text-secondary'></i> CCTV Systems
-            </span>
-            <span className='tech-badge-item'>
-              <i className='bi bi-terminal text-success'></i> Linux Servers
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 8. Client Testimonials & Social Proof ── */}
-      <section className='section'>
-        <div className='container'>
-          <div className='section-title text-center'>
-            <h2>Trusted by Business Leaders</h2>
-            <p>See what enterprise CTOs and founders say about our engineering quality</p>
-          </div>
-
-          <div className='row gy-4'>
-            <div className='col-lg-4 col-md-6'>
-              <div className='testimonial-card'>
-                <p className='testimonial-quote'>
-                  &ldquo;IT Servicing Hub migrated our entire server infrastructure to AWS smoothly with zero downtime. Their DevOps expertise is top-notch!&rdquo;
+          <div className='row gy-4 align-items-center'>
+            <div className='col-lg-6'>
+              <div className='p-4 p-md-5 rounded-4 bg-primary text-white position-relative shadow-lg'>
+                <div className='fs-1 opacity-50 mb-3'><i className='bi bi-quote'></i></div>
+                <p className='fs-5 fw-normal mb-4'>
+                  &ldquo;IT Servicing Hub seamlessly migrated our core database infrastructure to AWS with zero downtime. Their DevOps team is remarkably fast, reliable, and thorough.&rdquo;
                 </p>
-                <div className='testimonial-author'>
-                  <div className='testimonial-avatar'>RS</div>
+                <div className='d-flex align-items-center gap-3'>
+                  <div className='rounded-circle bg-white text-primary fw-bold d-flex align-items-center justify-content-center' style={{ width: '48px', height: '48px' }}>
+                    RS
+                  </div>
                   <div>
-                    <h6 className='mb-0 fw-bold'>Rajesh Sharma</h6>
-                    <small className='text-muted'>CTO, FinTech Startup</small>
+                    <h6 className='fw-bold mb-0 text-white'>Rajesh Sharma</h6>
+                    <small className='text-white-50'>CTO, FinTech Solutions</small>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='col-lg-4 col-md-6'>
-              <div className='testimonial-card'>
-                <p className='testimonial-quote'>
-                  &ldquo;Extremely fast web development delivery. They built our e-commerce portal and integrated payment gateways in record time.&rdquo;
-                </p>
-                <div className='testimonial-author'>
-                  <div className='testimonial-avatar'>AP</div>
-                  <div>
-                    <h6 className='mb-0 fw-bold'>Ananya Patel</h6>
-                    <small className='text-muted'>Founder, Satvik Nutrition</small>
+            <div className='col-lg-6'>
+              <div className='d-flex flex-column gap-4'>
+                <div className='p-4 rounded-4 bg-body-tertiary border'>
+                  <div className='text-warning mb-2'>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
                   </div>
+                  <p className='text-muted small mb-3'>
+                    &ldquo;Delivered our e-commerce application on schedule. Their full-stack engineers integrated custom payment APIs flawlessly.&rdquo;
+                  </p>
+                  <div className='fw-bold small'>Ananya Patel &mdash; <span className='text-muted fw-normal'>Founder, Satvik Nutrition</span></div>
                 </div>
-              </div>
-            </div>
 
-            <div className='col-lg-4 col-md-6'>
-              <div className='testimonial-card'>
-                <p className='testimonial-quote'>
-                  &ldquo;Prompt IT hardware maintenance and CCTV setup for our offices. Professional team with dependable support.&rdquo;
-                </p>
-                <div className='testimonial-author'>
-                  <div className='testimonial-avatar'>VK</div>
-                  <div>
-                    <h6 className='mb-0 fw-bold'>Vikram Kulkarni</h6>
-                    <small className='text-muted'>Operations Lead</small>
+                <div className='p-4 rounded-4 bg-body-tertiary border'>
+                  <div className='text-warning mb-2'>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
+                    <i className='bi bi-star-fill me-1'></i>
                   </div>
+                  <p className='text-muted small mb-3'>
+                    &ldquo;Reliable hardware servicing and office CCTV installation under K Electronics. Direct contact and quick turnarounds.&rdquo;
+                  </p>
+                  <div className='fw-bold small'>Vikram Kulkarni &mdash; <span className='text-muted fw-normal'>Operations Lead</span></div>
                 </div>
               </div>
             </div>
@@ -608,23 +569,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── 9. Apple / Appinventiv High-Impact CTA Banner ── */}
-      <section className='section pt-4'>
+      {/* ── 8. Minimal Ambient Call to Action Banner ── */}
+      <section className='py-5'>
         <div className='container'>
-          <div className='cta-section'>
-            <h2 className='appinventiv-heading text-white mb-3'>
-              Have a Project in Mind? <br /> Let&apos;s Build Something <span className='text-gradient'>Extraordinary</span>.
+          <div className='ambient-cta-card'>
+            <span className='bento-badge bg-white text-dark mb-3'>Ready to Scale?</span>
+            <h2 className='display-6 fw-bold text-white mb-3'>
+              Let&apos;s Build Your Next <span className='text-gradient'>Digital Product</span> Together
             </h2>
-            <p className='mb-4 max-w-650 mx-auto text-white-50 fs-5'>
-              Partner with IT Servicing Hub for software product engineering, cloud automation, and managed IT services.
+            <p className='text-white-50 max-w-650 mx-auto mb-4 fs-6'>
+              Talk with our senior engineering team today to review your project scope, technical requirements, or cloud infrastructure setup.
             </p>
             <div className='d-flex gap-3 justify-content-center flex-wrap'>
-              <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3'>
-                Talk to Our Tech Team <i className='bi bi-telephone ms-2'></i>
+              <Link to='/contact' className='btn btn-primary btn-lg px-4 py-3 shadow'>
+                Get Free Consultation <i className='bi bi-telephone ms-2'></i>
               </Link>
-              <Link to='/services' className='btn btn-outline-light btn-lg px-4 py-3'>
-                Browse All Services
-              </Link>
+              <a href={`https://wa.me/919404360234`} target='_blank' rel='noopener noreferrer' className='btn btn-outline-light btn-lg px-4 py-3'>
+                Chat on WhatsApp <i className='bi bi-whatsapp ms-2'></i>
+              </a>
             </div>
           </div>
         </div>

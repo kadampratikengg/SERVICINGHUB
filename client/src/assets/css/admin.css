@@ -1,0 +1,274 @@
+/* ── Admin Panel Custom Styles (Plus Jakarta Sans & Compact Dashboard Scale) ── */
+
+.admin-wrapper {
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color);
+  font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--default-color);
+}
+
+.admin-wrapper *,
+.admin-wrapper *::before,
+.admin-wrapper *::after {
+  font-family: inherit;
+}
+
+/* Headings scale in Admin */
+.admin-wrapper h1,
+.admin-wrapper .h1 { font-size: 1.5rem; font-weight: 700; }
+.admin-wrapper h2,
+.admin-wrapper .h2 { font-size: 1.25rem; font-weight: 700; }
+.admin-wrapper h3,
+.admin-wrapper .h3 { font-size: 1.1rem; font-weight: 600; }
+.admin-wrapper h4,
+.admin-wrapper .h4 { font-size: 0.98rem; font-weight: 600; }
+.admin-wrapper h5,
+.admin-wrapper .h5 { font-size: 0.88rem; font-weight: 600; }
+.admin-wrapper h6,
+.admin-wrapper .h6 { font-size: 0.8rem; font-weight: 600; }
+
+/* Full Screen Continuous Sidebar - Sidebar Scroller NOT Required */
+.admin-sidebar {
+  width: 240px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  z-index: 1040;
+  border-end: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden; /* Sidebar scroller currently disabled */
+}
+
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -240px;
+  }
+  .admin-sidebar.open {
+    left: 0;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.admin-sidebar-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-brand {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  letter-spacing: -0.01em;
+}
+
+.admin-menu {
+  padding: 0.75rem 0;
+  list-style: none;
+  margin: 0;
+}
+
+.admin-menu-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.81rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.admin-menu-item a:hover,
+.admin-menu-item a.active {
+  color: #ffffff;
+  background: rgba(37, 99, 235, 0.15);
+  border-left-color: #3b82f6;
+}
+
+/* Other Side Main Content - Scroller Required */
+.admin-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  overflow-y: auto; /* Other side main page vertical scroller */
+  overflow-x: hidden;
+}
+
+.admin-top-bar {
+  height: 56px;
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+}
+
+.admin-content-body {
+  padding: 1.5rem 1.25rem;
+  flex: 1;
+}
+
+.admin-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 4px 20px rgba(var(--shadow-color), 0.03);
+  overflow: hidden;
+  font-size: 0.83rem;
+}
+
+/* Compact Forms in Admin */
+.admin-wrapper .form-control,
+.admin-wrapper .form-select {
+  font-size: 0.81rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+}
+
+.admin-wrapper .form-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.admin-wrapper .btn {
+  font-size: 0.8rem;
+  padding: 0.38rem 0.85rem;
+  border-radius: 8px;
+}
+
+.admin-wrapper .btn-sm {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+}
+
+/* Table & Chart Display on Page Only - No Vertical Scroller inside tables */
+.table-responsive,
+.admin-table-container {
+  overflow-y: visible !important;
+  max-height: none !important;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-size: 0.81rem;
+}
+
+.admin-table th {
+  background: color-mix(in srgb, var(--surface-color), #000 3%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--default-color);
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.81rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--heading-color);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background: color-mix(in srgb, var(--surface-color), var(--accent-color) 3%);
+}
+
+.action-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.action-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.admin-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1035;
+}
+
+/* Modal / Popup Scroller Required with Compact Scaling */
+.modal-dialog {
+  max-height: 90vh;
+  margin: 1.5rem auto;
+}
+
+.modal-content {
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.83rem;
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+}
+
+.modal-header {
+  padding: 0.85rem 1.25rem;
+}
+
+.modal-footer {
+  padding: 0.75rem 1.25rem;
+}
+
+.modal-body,
+.admin-modal-body {
+  overflow-y: auto !important;
+  max-height: calc(88vh - 120px) !important;
+  padding: 1.25rem;
+}
+
+.badge {
+  font-size: 0.71rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+}
