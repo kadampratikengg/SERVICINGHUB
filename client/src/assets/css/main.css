@@ -607,6 +607,8 @@ textarea.form-control:focus {
 
 .project-item:hover .project-img {
   transform: scale(1.06);
+}
+
 .service-item,
 .pricing-item {
   border-radius: var(--radius-lg);
