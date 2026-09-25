@@ -10,37 +10,37 @@ const Services = () => {
       title: 'Software Development',
       desc: 'Custom business apps',
       slug: 'software-development',
-      icon: 'https://cdn-icons-png.flaticon.com/512/9068/9068689.png',
+      iconClass: 'bi bi-code-square',
     },
     {
       title: 'Web Application Development',
       desc: 'Full-stack systems',
       slug: 'web-application-development',
-      icon: 'https://cdn-icons-png.flaticon.com/512/2721/2721296.png',
+      iconClass: 'bi bi-window-stack',
     },
     {
       title: 'Mobile App (Hybrid)',
       desc: 'Android / iOS apps',
       slug: 'mobile-app-hybrid',
-      icon: 'https://cdn-icons-png.flaticon.com/512/814/814513.png',
+      iconClass: 'bi bi-phone',
     },
     {
       title: 'API Development',
       desc: 'Node.js / REST / JWT',
       slug: 'api-development',
-      icon: 'https://cdn-icons-png.flaticon.com/512/2906/2906274.png',
+      iconClass: 'bi bi-gear-wide-connected',
     },
     {
       title: 'UI/UX Design',
       desc: 'Beautiful interfaces',
       slug: 'ui-ux-design',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1829/1829586.png',
+      iconClass: 'bi bi-palette',
     },
     {
       title: 'E-commerce Development',
       desc: 'Online store setup',
       slug: 'e-commerce-development',
-      icon: 'https://cdn-icons-png.flaticon.com/512/891/891462.png',
+      iconClass: 'bi bi-cart3',
     },
   ];
 
@@ -52,37 +52,37 @@ const Services = () => {
       title: 'CI/CD Pipeline Setup',
       desc: 'GitHub, GitLab, Jenkins',
       slug: 'ci-cd-pipeline-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968866.png',
+      iconClass: 'bi bi-diagram-3',
     },
     {
       title: 'Docker Containerization',
       desc: 'Convert apps to containers',
       slug: 'docker-containerization',
-      icon: 'https://cdn-icons-png.flaticon.com/512/919/919853.png',
+      iconClass: 'bi bi-box-seam',
     },
     {
       title: 'Kubernetes Deployment',
       desc: 'Scalable microservices',
       slug: 'kubernetes-deployment',
-      icon: 'https://cdn-icons-png.flaticon.com/512/919/919852.png',
+      iconClass: 'bi bi-cpu',
     },
     {
       title: 'Infrastructure as Code',
       desc: 'Terraform, Ansible',
       slug: 'infrastructure-as-code',
-      icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png',
+      iconClass: 'bi bi-file-earmark-code',
     },
     {
       title: 'Monitoring & Alerts',
       desc: 'Prometheus, Grafana',
       slug: 'monitoring-and-alerts',
-      icon: 'https://cdn-icons-png.flaticon.com/512/8459/8459891.png',
+      iconClass: 'bi bi-activity',
     },
     {
       title: 'Automation Scripting',
       desc: 'Bash / Python',
       slug: 'automation-scripting',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3097/3097009.png',
+      iconClass: 'bi bi-terminal',
     },
   ];
 
@@ -94,49 +94,49 @@ const Services = () => {
       title: 'AWS Cloud Setup',
       desc: 'EC2, IAM, S3, VPC',
       slug: 'aws-cloud-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/873/873120.png',
+      iconClass: 'bi bi-cloud-check',
     },
     {
       title: 'Azure Cloud Setup',
       desc: 'VM, Storage, AD',
       slug: 'azure-cloud-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/732/732221.png',
+      iconClass: 'bi bi-microsoft',
     },
     {
       title: 'Google Cloud (GCP)',
       desc: 'Compute, IAM, Storage',
       slug: 'google-cloud-gcp',
-      icon: 'https://cdn-icons-png.flaticon.com/512/6124/6124991.png',
+      iconClass: 'bi bi-cloud-arrow-up',
     },
     {
       title: 'DigitalOcean / VPS Setup',
       desc: 'Droplets, DNS, SSL',
       slug: 'digitalocean-vps-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/873/873107.png',
+      iconClass: 'bi bi-hdd-network',
     },
     {
       title: 'Cloudflare Setup',
       desc: 'DNS, Proxy, Firewall',
       slug: 'cloudflare-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/5969/5969020.png',
+      iconClass: 'bi bi-shield-shaded',
     },
     {
       title: 'Zoho Setup Support',
       desc: 'Mail, Books, CRM',
       slug: 'zoho-setup-support',
-      icon: 'https://www.zohowebstatic.com/sites/default/files/styles/product-home-page-public-cloud/public/zoho-logo.png',
+      iconClass: 'bi bi-envelope-at',
     },
     {
       title: 'Microsoft 365 Setup',
       desc: 'Outlook, Teams, OneDrive',
       slug: 'microsoft-365-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/732/732221.png',
+      iconClass: 'bi bi-envelope-paper',
     },
     {
       title: 'DNS & Domain Setup',
       desc: 'Hosting + Domain linking',
       slug: 'dns-domain-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1048/1048943.png',
+      iconClass: 'bi bi-globe2',
     },
   ];
 
@@ -148,25 +148,25 @@ const Services = () => {
       title: 'Firewall Setup',
       desc: 'Server & network security',
       slug: 'firewall-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/942/942748.png',
+      iconClass: 'bi bi-shield-lock',
     },
     {
       title: 'Vulnerability Scan',
       desc: 'Security testing',
       slug: 'vulnerability-scan',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+      iconClass: 'bi bi-bug',
     },
     {
       title: 'Backup Solutions',
       desc: 'Auto backup setup',
       slug: 'backup-solutions',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1048/1048943.png',
+      iconClass: 'bi bi-database-up',
     },
     {
       title: 'SSL Certificate Setup',
       desc: 'HTTPS secure site',
       slug: 'ssl-certificate-setup',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1048/1048943.png',
+      iconClass: 'bi bi-lock',
     },
   ];
 
@@ -178,49 +178,49 @@ const Services = () => {
       title: 'CCTV Installation',
       desc: 'Home / Office CCTV',
       slug: 'cctv-installation',
-      icon: 'https://cdn-icons-png.flaticon.com/512/483/483947.png',
+      iconClass: 'bi bi-camera-video',
     },
     {
       title: 'Laptop Repair',
       desc: 'All brands supported',
       slug: 'laptop-repair',
-      icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920356.png',
+      iconClass: 'bi bi-laptop',
     },
     {
       title: 'Desktop Repair',
       desc: 'Hardware + software',
       slug: 'desktop-repair',
-      icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920365.png',
+      iconClass: 'bi bi-display',
     },
     {
       title: 'UPS Installation',
       desc: 'Home/Office UPS',
       slug: 'ups-installation',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1048/1048980.png',
+      iconClass: 'bi bi-lightning-charge',
     },
     {
       title: 'Battery Replacement',
       desc: 'Inverter/UPS batteries',
       slug: 'battery-replacement',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3103/3103446.png',
+      iconClass: 'bi bi-battery-charging',
     },
     {
       title: 'Appliance Repair',
       desc: 'AC, Fridge, Washing Machine',
       slug: 'appliance-repair',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1048/1048975.png',
+      iconClass: 'bi bi-wrench-adjustable',
     },
     {
       title: 'Electrical Work',
       desc: 'Wiring & installation',
       slug: 'electrical-work',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1584/1584892.png',
+      iconClass: 'bi bi-plug',
     },
     {
       title: 'Plumbing Services',
       desc: 'Repairs, installation',
       slug: 'plumbing-services',
-      icon: 'https://cdn-icons-png.flaticon.com/512/3171/3171131.png',
+      iconClass: 'bi bi-droplet',
     },
   ];
 
@@ -241,15 +241,12 @@ const Services = () => {
                 to={`/services/${s.slug}`}
                 className='text-decoration-none text-reset d-block h-100'
               >
-                <div className='service-item text-center border rounded p-3 h-100'>
-                  <img
-                    src={s.icon}
-                    alt={s.title}
-                    style={{ width: 60 }}
-                    className='mb-3'
-                  />
-                  <h4>{s.title}</h4>
-                  <p className='text-muted'>{s.desc}</p>
+                <div className='service-item text-center border rounded p-4 h-100 position-relative overflow-hidden'>
+                  <div className='service-icon-box mx-auto mb-3'>
+                    <i className={`${s.iconClass} fs-2`}></i>
+                  </div>
+                  <h4 className='mb-2'>{s.title}</h4>
+                  <p className='text-muted small mb-0'>{s.desc}</p>
                 </div>
               </Link>
             </div>

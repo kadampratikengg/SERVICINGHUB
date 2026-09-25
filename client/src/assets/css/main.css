@@ -669,10 +669,22 @@ textarea.form-control:focus {
   box-shadow: 0 22px 44px rgba(var(--shadow-color), 0.16);
 }
 
-.service-item img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
+.service-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-item:hover .service-icon-box {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.1) rotate(-4deg);
 }
 
 .pricing-item h3 {
